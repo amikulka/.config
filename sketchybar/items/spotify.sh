@@ -12,7 +12,8 @@ spotify_anchor=(
   icon=􁁒
   icon.font="$FONT:Regular:20.0"
   label.drawing=off
-  drawing=off
+  drawing=on
+  x_offset=100 # Placeholder value, adjust this to position the widget to the right of the notch
   y_offset=2
 )
 
