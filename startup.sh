@@ -51,6 +51,16 @@ echo "$VAR" >> $ZSHRC
 #install latest node
 brew install node
 
+# install ripgrep
+brew install ripgrep
+
+# install jq
+# jq is a lightweight and flexible command-line JSON processor
+brew install jq
+
+# Install 1password
+brew install --cask 1password
+
 # Install nerd-fonts
 brew tap homebrew/cask-fonts
 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
@@ -67,3 +77,21 @@ brew install tmux
 
 # Install alacritty
 brew install --cask alacritty
+
+# Install sketchybar-app-font
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.16/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.20/icon_map_fn.sh -o ~/.config/sketchybar/plugins/icon_map_fn.sh
+
+# Install sketchybar
+brew tap FelixKratz/formulae
+brew install sketchybar
+
+# Install yabai
+brew tap koekeishiya/formulae
+brew install yabai
+
+# Install skhd
+brew install skhd
+
+# Install Spotify
+brew install --cask spotify
