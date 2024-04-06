@@ -2,12 +2,14 @@
 
 calendar=(
   icon=cal
-  icon.font="$FONT:Black:12.0"
+  icon.font="$FONT:Semibold:13.0"
   icon.padding_right=0
   label.width=45
   label.align=right
-  padding_left=15
-  update_freq=30
+  label.font="$FONT:Semibold:13.0"
+  padding_left=10
+  padding_right=10
+  update_freq=10
   script="$PLUGIN_DIR/calendar.sh"
   click_script="$PLUGIN_DIR/zen.sh"
 )

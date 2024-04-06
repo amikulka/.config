@@ -18,11 +18,11 @@ do
     icon.padding_right=10
     padding_left=2
     padding_right=2
-    label.padding_right=20
+    label.padding_right=15
     icon.highlight_color=$RED
     label.color=$GREY
     label.highlight_color=$WHITE
-    label.font="sketchybar-app-font:Regular:16.0"
+    label.font="sketchybar-app-font:Regular:14.0"
     label.y_offset=-1
     background.height=20
     background.color=$BACKGROUND_1
@@ -37,9 +37,9 @@ done
 
 space_creator=(
   icon=􀆊
-  icon.font="$FONT:Heavy:16.0"
-  padding_left=10
-  padding_right=8
+  icon.font="$FONT:Semibold:14.0"
+  padding_left=5
+  padding_right=10
   label.drawing=off
   display=active
   click_script='yabai -m space --create'

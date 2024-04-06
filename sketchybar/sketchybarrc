@@ -25,8 +25,6 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 bar=(
   height=22
   color=0x00000000
-  border_width=1
-  border_color=
   shadow=off
   position=top
   sticky=on
@@ -77,13 +75,13 @@ source "$ITEM_DIR/spotify.sh"
 # # source "$ITEM_DIR/media.sh"
 #
 # # Right
-# source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/calendar.sh"
 # source "$ITEM_DIR/brew.sh"
 # source "$ITEM_DIR/github.sh"
 # source "$ITEM_DIR/wifi.sh"
-# source "$ITEM_DIR/battery.sh"
-# source "$ITEM_DIR/volume.sh"
-# source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/cpu.sh"
 # source "$ITEM_DIR/svim.sh"
 
 sketchybar --hotload on
