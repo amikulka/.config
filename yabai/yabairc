@@ -15,7 +15,7 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 
 # set mouse follows focus mode (default: off)
 # When yabai focuses another window, the mouse cursor gets moved to the center of the focused window
-yabai -m config mouse_follows_focus on
+# yabai -m config mouse_follows_focus on
 
 # Exclude problematic apps from being managed:
 yabai -m rule --add app="^(1Password|AWS VPN Client|Postico|Docker Desktop|LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off

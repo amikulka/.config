@@ -648,6 +648,7 @@ require('lazy').setup({
           python = { 'black' },
           typescript = { 'prettier' },
           javascript = { 'prettier' },
+          yaml = { 'prettier' },
           -- Add more formatters as needed
         },
         formatters = {
