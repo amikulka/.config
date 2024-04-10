@@ -1,5 +1,5 @@
 # Create and destroy spaces: ralt - [c, d]
-ralt - c : yabai -m space --create
+shift - ralt - c : yabai -m space --create
 ralt - d : yabai -m space --destroy
 ## Navigation (lalt - ...)
 # Space Navigation (four spaces per display): lalt - {1, 2, 3, 4}
