@@ -23,7 +23,7 @@ PADDINGS=3 # All paddings use this value (icon, label, background)
 
 # Setting up the general bar appearance of the bar with dynamic display assignment
 bar=(
-  height=22
+  height=30
   color=0x00000000
   shadow=off
   position=top
