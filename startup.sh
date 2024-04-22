@@ -78,6 +78,12 @@ brew install tmux
 # Install alacritty
 brew install --cask alacritty
 
+# Install Rectangle
+brew install --cask rectangle
+# Set up gap at top of screen for rectangle
+defaults write com.knollsoft.Rectangle screenEdgeGapTop -int 26
+
+
 # Install sketchybar-app-font
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.16/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.20/icon_map_fn.sh -o ~/.config/sketchybar/plugins/icon_map_fn.sh
