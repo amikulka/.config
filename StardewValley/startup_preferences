@@ -7,13 +7,13 @@
   <levelTenCombat>false</levelTenCombat>
   <skipWindowPreparation>false</skipWindowPreparation>
   <sawAdvancedCharacterCreationIndicator>false</sawAdvancedCharacterCreationIndicator>
-  <timesPlayed>48</timesPlayed>
+  <timesPlayed>126</timesPlayed>
   <windowMode>1</windowMode>
   <displayIndex>0</displayIndex>
   <gamepadMode>Auto</gamepadMode>
   <playerLimit>-1</playerLimit>
-  <fullscreenResolutionX>3024</fullscreenResolutionX>
-  <fullscreenResolutionY>1964</fullscreenResolutionY>
+  <fullscreenResolutionX>3840</fullscreenResolutionX>
+  <fullscreenResolutionY>2160</fullscreenResolutionY>
   <lastEnteredIP />
   <languageCode>en</languageCode>
   <clientOptions>
@@ -41,7 +41,7 @@
     <muteAnimalSounds>false</muteAnimalSounds>
     <vsyncEnabled>true</vsyncEnabled>
     <fullscreen>false</fullscreen>
-    <windowedBorderlessFullscreen>true</windowedBorderlessFullscreen>
+    <windowedBorderlessFullscreen>false</windowedBorderlessFullscreen>
     <showClearBackgrounds>false</showClearBackgrounds>
     <useChineseSmoothFont>false</useChineseSmoothFont>
     <useAlternateFont>false</useAlternateFont>
@@ -61,8 +61,8 @@
     <localCoopBaseZoomLevel>1</localCoopBaseZoomLevel>
     <uiScale>1</uiScale>
     <localCoopDesiredUIScale>1.5</localCoopDesiredUIScale>
-    <preferredResolutionX>3840</preferredResolutionX>
-    <preferredResolutionY>2160</preferredResolutionY>
+    <preferredResolutionX>3024</preferredResolutionX>
+    <preferredResolutionY>1964</preferredResolutionY>
     <serverPrivacy>FriendsOnly</serverPrivacy>
     <actionButton>
       <InputButton>

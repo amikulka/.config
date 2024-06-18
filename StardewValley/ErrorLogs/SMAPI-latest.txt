@@ -1,0 +1,225 @@
+[07:08:45 INFO  SMAPI] SMAPI 4.0.8 with Stardew Valley 1.6.8 build 24119 on macOS Unix 14.5.0
+[07:08:45 INFO  SMAPI] Mods go here: /Users/aaronmikulka/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/Mods
+[07:08:45 TRACE SMAPI] Log started at 2024-06-18T14:08:45 UTC
+[07:08:49 DEBUG SMAPI] Waiting for game to launch...
+[07:08:50 DEBUG SMAPI] Loading mod metadata...
+[07:08:50 DEBUG SMAPI] Loading mods...
+[07:08:50 TRACE SMAPI]    Console Commands (from Mods/ConsoleCommands/ConsoleCommands.dll, ID: SMAPI.ConsoleCommands)...
+[07:08:50 TRACE SMAPI]    Save Backup (from Mods/SaveBackup/SaveBackup.dll, ID: SMAPI.SaveBackup)...
+[07:08:50 TRACE SMAPI]       Detected direct console access (System.Console type) in assembly SaveBackup.dll.
+[07:08:50 TRACE SMAPI]    Content Patcher (from Mods/ContentPatcher/ContentPatcher.dll, ID: Pathoschild.ContentPatcher)...
+[07:08:51 TRACE SMAPI]    OhoDavi's StardewValley Anime Mods (from Mods/[CP] Portrait Anime Mods OhoDavi, ID: OhoDavi.SDVAnimeP) [content pack]...
+[07:08:51 TRACE SMAPI]    UI Info Suite 2 (from Mods/UIInfoSuite2/UIInfoSuite2.dll, ID: Annosz.UiInfoSuite2)...
+[07:08:51 TRACE SMAPI]    NPC Map Locations (from Mods/NPCMapLocations/NPCMapLocations.dll, ID: Bouhm.NPCMapLocations)...
+[07:08:51 INFO  SMAPI] Loaded 5 mods:
+[07:08:51 INFO  SMAPI]    Console Commands 4.0.8 by SMAPI | Adds SMAPI console commands that let you manipulate the game.
+[07:08:51 INFO  SMAPI]    Content Patcher 2.2.0 by Pathoschild | Loads content packs which edit game data, images, and maps without changing the game files.
+[07:08:51 INFO  SMAPI]    NPC Map Locations 3.1.0 by Bouhm | Shows NPCs and farmers on a modified map page for accurate tracking.
+[07:08:51 INFO  SMAPI]    Save Backup 4.0.8 by SMAPI | Automatically backs up all your saves once per day into its folder.
+[07:08:51 INFO  SMAPI]    UI Info Suite 2 2.3.4 by Annosz | Adds a useful information to the user interface. Based on Cdaragorn's excellent UI Info Suite.
+
+[07:08:51 INFO  SMAPI] Loaded 1 content packs:
+[07:08:51 INFO  SMAPI]    OhoDavi's StardewValley Anime Mods 1.6.0 by OhoDavi | for Content Patcher | Replaces the Vanilla Portraits with OhoDavi's Anime-like Portraits.
+
+[07:08:51 INFO  SMAPI] Found 1 mod with warnings:
+[07:08:51 DEBUG SMAPI] Launching mods...
+[07:08:51 TRACE Save Backup] Already backed up today.
+[07:08:51 TRACE SMAPI]    Found mod-provided API (ContentPatcher.Framework.ContentPatcherAPI).
+[07:08:51 DEBUG SMAPI] Mods loaded and ready!
+[07:08:51 TRACE SMAPI] Checking for updates...
+[07:08:52 TRACE game] setGameMode( 'titleScreenGameMode (0)' )
+[07:08:52 TRACE SMAPI]    SMAPI okay.
+[07:08:52 TRACE SMAPI]    Checking for updates to 4 mods...
+[07:08:52 TRACE game] Steam logged on: True
+[07:08:52 TRACE game] Initializing GalaxySDK
+[07:08:52 TRACE game] Requesting Steam app ticket
+[07:08:52 INFO  SMAPI] Type 'help' for help, or 'help <cmd>' for a command's usage
+[07:08:52 TRACE UI Info Suite 2] Registered Sound: UIInfoSuite.sounds.LevelUp
+[07:08:52 TRACE game] Signing into GalaxySDK
+[07:08:52 TRACE SMAPI]    All mods up to date.
+[07:08:52 INFO  Content Patcher] Some content packs haven't been updated for Stardew Valley 1.6.0. Content Patcher will try to auto-migrate them, but compatibility isn't guaranteed.
+
+Affected content packs:
+- OhoDavi's StardewValley Anime Mods
+
+For mod authors, see how to update a mod: https://smapi.io/cp-migrate.
+[07:08:52 TRACE game] Registered Data/Triggers action: Pathoschild.ContentPatcher_MigrateIds
+[07:08:52 TRACE Content Patcher] Requested cache invalidation for all assets matching a predicate.
+[07:08:52 TRACE SMAPI] Invalidated 0 cache entries.
+[07:08:52 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:864 Y:486 Width:1280 Height:720}
+[07:08:53 TRACE game] Galaxy auth success
+[07:08:53 TRACE game] Galaxy signed in
+[07:08:53 TRACE game] Galaxy logged on
+[07:08:53 TRACE game] Successfully set GOG Galaxy profile name.
+[07:08:58 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:09:10 TRACE SMAPI] Synchronizing 'Find Save Games' task...
+[07:09:12 TRACE SMAPI]    task complete.
+[07:09:15 TRACE game] gameMode was 'titleScreenGameMode (0)', set to 'loadingMode (6)'.
+[07:09:15 TRACE SMAPI] Game loader synchronizing...
+[07:09:15 TRACE game] getLoadEnumerator('Squirts_374457175')
+[07:09:15 TRACE game] regular stream detected...
+[07:09:15 TRACE SMAPI] Synchronizing 'Load_Deserialize' task...
+[07:09:18 TRACE SMAPI]    task complete.
+[07:09:18 TRACE SMAPI] Synchronizing 'Load_LoadForNewGame' task...
+[07:09:18 TRACE SMAPI] Content Patcher edited Data/Locations.
+[07:09:19 TRACE SMAPI]    task complete.
+[07:09:19 TRACE SMAPI] Synchronizing 'Load_Farmer' task...
+[07:09:19 TRACE SMAPI]    task complete.
+[07:09:19 TRACE SMAPI] Synchronizing 'Load_Locations' task...
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Abigail (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/George (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Evelyn (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Alex (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Haley (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 WARN  Content Patcher] Can't apply image patch "OhoDavi's StardewValley Anime Mods > EditImage Portraits/Emily #1" to Portraits/Emily: the FromFile file 'assets/Emily.png' doesn't exist.
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Emily (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Vincent (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Jodi (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Sam (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Kent (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Clint (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Lewis (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Pierre (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Caroline (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Gus (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Penny (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Pam (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Harvey (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Elliott (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Maru (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Demetrius (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Robin (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Sebastian (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Linus (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Wizard (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Jas (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Marnie (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Shane (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Leah (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Dwarf (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Krobus (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/MrQi (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Sandy (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Gunther (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Marlon (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Henchman (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI] Content Patcher edited Portraits/Willy (for the 'OhoDavi's StardewValley Anime Mods' content pack).
+[07:09:19 TRACE SMAPI]    task complete.
+[07:09:19 TRACE game] gameMode was 'loadingMode (6)', set to 'playingGameMode (3)'.
+[07:09:20 TRACE game] getLoadEnumerator() exited, elapsed = '00:00:04.5753779'
+[07:09:20 TRACE SMAPI] Game loader done.
+[07:09:20 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:09:20 TRACE SMAPI] Context: loaded save 'Squirts_374457175', starting spring 3 Y3, locale set to . Single-player.
+[07:09:20 INFO  UI Info Suite 2] Setting up icon sheet
+[07:09:20 TRACE SMAPI] NPC Map Locations loaded asset 'Mods/Bouhm.NPCMapLocations/NPCs'.
+[07:09:20 TRACE SMAPI] NPC Map Locations loaded asset 'Mods/Bouhm.NPCMapLocations/Locations'.
+[07:09:21 TRACE NPC Map Locations] Unknown locations: LewisBasement
+[07:09:42 TRACE game] Warping to Farm
+[07:10:12 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:10:21 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:10:30 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:10:38 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:10:40 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:11:45 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:11:59 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:12:25 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:12:30 TRACE game] Warping to Coopf3f2eaff-464d-453c-83f5-1f2d6d3e38a9
+[07:12:45 TRACE game] Warping to Farm
+[07:12:56 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:13:14 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:13:43 TRACE game] Warping to FarmCave
+[07:13:49 TRACE game] Warping to Farm
+[07:13:54 TRACE game] Warping to Greenhouse
+[07:14:25 TRACE game] Warping to Farm
+[07:16:47 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:17:34 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:17:47 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:17:53 TRACE game] Warping to Greenhouse
+[07:18:11 TRACE game] Warping to Farm
+[07:18:27 TRACE game] Warping to FarmHouse
+[07:18:33 TRACE game] Warping to Farm
+[07:20:11 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:20:27 TRACE game] Warping to FarmHouse
+[07:20:40 TRACE game] Warping to Farm
+[07:20:48 TRACE game] Warping to BusStop
+[07:20:59 TRACE game] Warping to Town
+[07:21:37 TRACE game] Warping to Beach
+[07:22:18 TRACE game] Warping to Town
+[07:22:38 TRACE game] Warping to BusStop
+[07:22:46 TRACE game] Warping to Farm
+[07:22:50 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:23:10 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:23:48 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:25:32 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:26:26 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:26:30 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:26:39 TRACE game] Warping to FarmHouse
+[07:26:56 TRACE SMAPI] Synchronizing 'NewDay' task...
+[07:26:56 TRACE SMAPI]    task complete.
+[07:26:56 TRACE SMAPI] Context: before save.
+[07:27:25 TRACE game] SaveGame.Save() called.
+[07:27:26 TRACE SMAPI] Synchronizing 'Save' task...
+[07:27:26 TRACE game] Saving without compression...
+[07:27:27 TRACE SMAPI]    task complete.
+[07:27:27 TRACE game] SaveGame.Save() completed without exceptions.
+[07:27:30 TRACE SMAPI] Context: after save, starting spring 4 Y3.
+[07:27:34 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:29:32 TRACE game] Warping to Farm
+[07:29:57 TRACE game] Warping to FarmCave
+[07:29:59 TRACE game] Warping to Farm
+[07:30:03 TRACE game] Warping to Greenhouse
+[07:30:38 TRACE game] Warping to Farm
+[07:30:41 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:30:55 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:31:04 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:31:24 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:31:32 TRACE game] Warping to Coopf3f2eaff-464d-453c-83f5-1f2d6d3e38a9
+[07:31:49 TRACE game] Warping to Farm
+[07:31:56 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:32:07 TRACE game] Warping to Barn8269d243-64a0-4fd7-a542-25b18b728d19
+[07:32:23 TRACE game] Warping to Farm
+[07:32:31 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:33:01 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:33:35 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:33:59 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:34:20 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:34:46 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:35:31 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:37:01 TRACE game] Warping to BusStop
+[07:37:11 TRACE game] Warping to Mountain
+[07:38:58 TRACE game] Warping to Mine
+[07:39:01 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:39:28 TRACE game] Warping to UndergroundMine40
+[07:39:32 TRACE game] Warping to UndergroundMine41
+[07:39:33 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:40:50 TRACE game] Warping to UndergroundMine42
+[07:42:45 TRACE game] Warping to UndergroundMine43
+[07:43:33 TRACE game] Warping to UndergroundMine44
+[07:44:25 TRACE game] Warping to UndergroundMine45
+[07:44:53 TRACE game] Warping to UndergroundMine46
+[07:45:17 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:45:24 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:45:48 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:46:02 TRACE game] Warping to UndergroundMine47
+[07:46:15 TRACE game] Warping to UndergroundMine48
+[07:46:51 TRACE game] Warping to UndergroundMine49
+[07:47:26 TRACE game] Warping to Mine
+[07:47:32 TRACE game] Warping to BusStop
+[07:47:40 TRACE game] Warping to Farm
+[07:47:42 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:48:40 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:48:48 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:49:54 TRACE game] Warping to FarmHouse
+[07:49:59 TRACE SMAPI] Synchronizing 'NewDay' task...
+[07:49:59 TRACE SMAPI]    task complete.
+[07:49:59 TRACE SMAPI] Context: before save.
+[07:50:06 TRACE game] SaveGame.Save() called.
+[07:50:06 TRACE SMAPI] Synchronizing 'Save' task...
+[07:50:06 TRACE game] Saving without compression...
+[07:50:06 TRACE SMAPI]    task complete.
+[07:50:06 TRACE game] SaveGame.Save() completed without exceptions.
+[07:50:10 TRACE SMAPI] Context: after save, starting spring 5 Y3.
+[07:50:12 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[07:50:15 TRACE game] Disconnected: ClosedGame
+[07:50:16 TRACE SMAPI] Disposing...
+[07:50:16 TRACE SMAPI] Disposing the content coordinator. Content managers will no longer be usable after this point.
