@@ -650,7 +650,7 @@ require('lazy').setup({
           python = { 'black' },
           typescript = { 'prettier' },
           javascript = { 'prettier' },
-          yaml = { 'prettier' },
+          -- yaml = { 'prettier' },
           gitcommit = { 'ltex-ls' },
           -- Add more formatters as needed
         },
