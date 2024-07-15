@@ -311,7 +311,7 @@ require('lazy').setup({
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+        ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
         ['<leader>p'] = { name = '[P]roject', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
         ['<leader>fw'] = { name = '[F]ind [W]orkspace', _ = 'which_key_ignore' },
@@ -650,6 +650,8 @@ require('lazy').setup({
           python = { 'black' },
           typescript = { 'prettier' },
           javascript = { 'prettier' },
+          typescriptreact = { 'prettier' },
+          javascriptreact = { 'prettier' },
           -- yaml = { 'prettier' },
           gitcommit = { 'ltex-ls' },
           -- Add more formatters as needed
@@ -657,7 +659,7 @@ require('lazy').setup({
         formatters = {
           prettier = {
             -- Change where to find the command
-            command = '/Users/aaronmikulka/.nvm/versions/node/v21.7.1/bin/prettier',
+            command = '/Users/aaronmikulka/.nvm/versions/node/v22.3.0/bin/prettier',
           },
         },
         -- Leave format_on_save disabled here or set it based on a global variable
@@ -869,7 +871,19 @@ require('lazy').setup({
       --  - va)  - [V]isually select [A]round [)]paren
       --  - yinq - [Y]ank [I]nside [N]ext [']quote
       --  - ci'  - [C]hange [I]nside [']quote
-      require('mini.ai').setup { n_lines = 500 }
+      require('mini.ai').setup {
+        n_lines = 500,
+        custom_textobjects = {
+          f = require('mini.ai').gen_spec.treesitter {
+            a = '@function.outer',
+            i = '@function.inner',
+          },
+          c = require('mini.ai').gen_spec.treesitter {
+            a = '@class.outer',
+            i = '@class.inner',
+          },
+        },
+      }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
@@ -926,9 +940,21 @@ require('lazy').setup({
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        additional_vim_regex_highlighting = { 'ruby', 'typescript' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'ruby', 'typescript' } },
+      text_objects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+            ['ac'] = '@class.outer',
+            ['ic'] = '@class.inner',
+          },
+        },
+      },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
@@ -943,6 +969,9 @@ require('lazy').setup({
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
   },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the

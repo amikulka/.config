@@ -18,10 +18,12 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', 'Q', '<nop>')
 vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, { desc = 'Format buffer' })
 
-vim.keymap.set('n', '<leader>r', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Search and Replace' })
+vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace [W]ord' })
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make file executable' })
 
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Write buffer' })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Quit buffer' })
+vim.keymap.set('n', '<leader>Q', ':q!<CR>', { desc = 'Force quit buffer' })
 
 -- Separate clipboard for yank and paste
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to system clipboard' })
