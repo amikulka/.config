@@ -124,20 +124,36 @@ return {
     }
 
     ins_left {
-      -- filesize component
-      'filesize',
-      cond = conditions.buffer_not_empty,
-    }
-
-    ins_left {
       'filename',
       cond = conditions.buffer_not_empty,
       color = { fg = colors.magenta, gui = 'bold' },
+      path = 3,
+      newfile_status = true,
+      symbols = {
+        modified = '[+/-]', -- Text to show when the file is modified.
+        readonly = '[RO]', -- Text to show when the file is non-modifiable or readonly.
+        unnamed = '[No Name]', -- Text to show for unnamed buffers.
+        newfile = '[New]', -- Text to show for newly created file before first write
+      },
     }
 
-    ins_left { 'location' }
+    ins_left {
+      'branch',
+      icon = '',
+      color = { fg = colors.violet, gui = 'bold' },
+    }
 
-    ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+    ins_left {
+      'diff',
+      -- Is it me or the symbol for modified us really weird
+      symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+      cond = conditions.hide_in_width,
+    }
 
     ins_left {
       'diagnostics',
@@ -162,8 +178,8 @@ return {
       -- Lsp server name .
       function()
         local msg = 'No Active Lsp'
-        local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-        local clients = vim.lsp.get_active_clients()
+        local buf_ft = vim.api.get_option_value(0, 'filetype')
+        local clients = vim.lsp.get_clients()
         if next(clients) == nil then
           return msg
         end
@@ -194,23 +210,15 @@ return {
       color = { fg = colors.green, gui = 'bold' },
     }
 
-    ins_right {
-      'branch',
-      icon = '',
-      color = { fg = colors.violet, gui = 'bold' },
-    }
+    --[[ ins_right {
+      -- filesize component
+      'filesize',
+      cond = conditions.buffer_not_empty,
+    } ]]
 
-    ins_right {
-      'diff',
-      -- Is it me or the symbol for modified us really weird
-      symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-    }
+    ins_right { 'location' }
+
+    ins_right { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
     ins_right {
       function()
