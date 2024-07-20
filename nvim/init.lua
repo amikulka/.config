@@ -307,18 +307,25 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
+      which_key = require 'which-key'
+      which_key.setup()
 
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
-        ['<leader>p'] = { name = '[P]roject', _ = 'which_key_ignore' },
-        ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
-        ['<leader>fw'] = { name = '[F]ind [W]orkspace', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+      which_key.add {
+        -- Document existing key chains
+        { '<leader>c', group = '[C]ode' },
+        { '<leader>c_', hidden = true },
+        { '<leader>d', group = '[D]ocument' },
+        { '<leader>d_', hidden = true },
+        { '<leader>f', group = '[F]ind' },
+        { '<leader>f_', hidden = true },
+        { '<leader>fw', group = '[F]ind [W]orkspace' },
+        { '<leader>fw_', hidden = true },
+        { '<leader>p', group = '[P]roject' },
+        { '<leader>p_', hidden = true },
+        { '<leader>r', group = '[R]ename' },
+        { '<leader>r_', hidden = true },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>t_', hidden = true },
       }
     end,
   },
@@ -650,7 +657,7 @@ require('lazy').setup({
         -- Your other configuration settings
         formatters_by_ft = {
           lua = { 'stylua' },
-          python = { 'black' },
+          python = { 'ruff' },
           typescript = { 'prettier' },
           javascript = { 'prettier' },
           typescriptreact = { 'prettier' },
