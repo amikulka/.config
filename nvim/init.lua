@@ -176,7 +176,7 @@ vim.opt.wrap = false
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -223,6 +223,17 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end
   end,
 })
+--[[ vim.api.nvim_create_augroup('neotree', {})
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Open Neotree on startup with directory',
+  group = 'neotree',
+  callback = function()
+    local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
+    if stats and stats.type == 'directory' then
+      require('neo-tree.setup.netrw').hijack()
+    end
+  end,
+}) ]]
 
 vim.g.autoformat_enabled = true -- Default value, change to false if you want it disabled by default
 
@@ -307,7 +318,7 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      which_key = require 'which-key'
+      local which_key = require 'which-key'
       which_key.setup()
 
       which_key.add {

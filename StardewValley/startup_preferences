@@ -7,7 +7,7 @@
   <levelTenCombat>false</levelTenCombat>
   <skipWindowPreparation>false</skipWindowPreparation>
   <sawAdvancedCharacterCreationIndicator>false</sawAdvancedCharacterCreationIndicator>
-  <timesPlayed>126</timesPlayed>
+  <timesPlayed>212</timesPlayed>
   <windowMode>1</windowMode>
   <displayIndex>0</displayIndex>
   <gamepadMode>Auto</gamepadMode>
@@ -61,8 +61,8 @@
     <localCoopBaseZoomLevel>1</localCoopBaseZoomLevel>
     <uiScale>1</uiScale>
     <localCoopDesiredUIScale>1.5</localCoopDesiredUIScale>
-    <preferredResolutionX>3024</preferredResolutionX>
-    <preferredResolutionY>1964</preferredResolutionY>
+    <preferredResolutionX>3840</preferredResolutionX>
+    <preferredResolutionY>2160</preferredResolutionY>
     <serverPrivacy>FriendsOnly</serverPrivacy>
     <actionButton>
       <InputButton>
