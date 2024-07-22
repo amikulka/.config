@@ -239,9 +239,9 @@ vim.g.autoformat_enabled = true -- Default value, change to false if you want it
 
 vim.api.nvim_set_keymap(
   'n',
-  '<leader>ta',
+  '<leader>tf',
   '<cmd>lua vim.g.autoformat_enabled = not vim.g.autoformat_enabled; print("Autoformat is now " .. (vim.g.autoformat_enabled and "enabled" or "disabled"))<CR>',
-  { noremap = true, silent = true, desc = '[T]oggle [A]utoformat' }
+  { noremap = true, silent = true, desc = '[T]oggle Auto[F]ormat' }
 )
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -278,7 +278,7 @@ require('lazy').setup({
   --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  -- { 'numToStr/Comment.nvim', opts = {} },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following lua:
@@ -327,16 +327,18 @@ require('lazy').setup({
         { '<leader>c_', hidden = true },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>d_', hidden = true },
-        { '<leader>f', group = '[F]ind' },
-        { '<leader>f_', hidden = true },
-        { '<leader>fw', group = '[F]ind [W]orkspace' },
-        { '<leader>fw_', hidden = true },
         { '<leader>p', group = '[P]roject' },
         { '<leader>p_', hidden = true },
         { '<leader>r', group = '[R]ename' },
         { '<leader>r_', hidden = true },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>t_', hidden = true },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>s_', hidden = true },
+        { '<leader>sw', group = '[S]earch [W]orkspace' },
+        { '<leader>sw_', hidden = true },
+        { '<leader>g', group = '[G]it' },
+        { '<leader>g_', hidden = true },
       }
     end,
   },
@@ -437,8 +439,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-      vim.keymap.set('n', '<leader>s<enter>', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>s<enter>', builtin.oldfiles, { desc = '[S]earch Recent Files' })
+      vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = '[S]earch existing [B]uffers' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>s.', function()
@@ -447,7 +449,7 @@ require('lazy').setup({
           winblend = 10,
           previewer = false,
         })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      end, { desc = 'Search current buffer (file)' })
 
       -- Also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -547,15 +549,15 @@ require('lazy').setup({
 
           -- Fuzzy find all the symbols in your current workspace
           --  Similar to document symbols, except searches over your whole project.
-          map('<leader>fws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[F]ind [W]orkspace [S]ymbols')
+          map('<leader>sws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch [W]orkspace [S]ymbols')
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame variable')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ctinn')
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
@@ -758,6 +760,9 @@ require('lazy').setup({
           vim.keymap.set({ 'i', 's' }, '<C-d>', function()
             copilot.dismiss()
           end)
+          vim.keymap.set({ 'i', 's' }, '<leader>tc', function()
+            copilot.toggle_auto_trigger()
+          end, { desc = 'Toggle [C]opilot' })
 
           vim.api.nvim_set_hl(0, 'CopilotSuggestion', { fg = '#c19a6b' })
         end,
@@ -911,7 +916,7 @@ require('lazy').setup({
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      require('mini.surround').setup {}
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,

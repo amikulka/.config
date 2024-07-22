@@ -1,0 +1,54 @@
+## diagnostics @errors
+Go to previous diagnostic message | [d
+Go to next diagnostic message | ]d
+Show a line's diagnostic messages | <leader>e
+
+## formatting @format @indent
+Format the current buffer | <leader>=
+Toggle auto-formatting | <leader>ta
+
+## telescope @search @find
+Search help files | <leader>sh
+Search keymaps | <leader>sk
+Open file in verticle split (in telescope) | <C-v>
+Open file in horizontal split (in telescope) | <C-x>
+
+## surround @wrap
+Surround Add | sa
+Surround Delete | sd
+Surround Replace | sr
+Surround Find Next | sf
+Surround Find Previous | sF
+Surround Highlight | sh
+
+## LSP @language @server
+Hover documentation | K
+Go to definition | gd
+Go to references | gr
+Go to declaration | gD
+Go to type definition | D
+Go to implementation | gI
+Code actions | <leader>ca
+
+## Copilot @github @copilot @ai
+Accept word | <C-w>
+Accept line | <C-l>
+Next suggestion | <C-j>
+Previous suggestion | <C-k>
+Dismiss suggestion | <C-d>
+Toggle copilot | <leader>tc
+
+## Harpoon @harpoon @navigation
+Add file to harpoon | <leader>a
+Open harpoon popup | <leader>e
+Go to next harpoon file | <C-n>
+Go to previous harpoon file | <C-p>
+Go to harpoon [1] | <C-m>
+Go to harpoon [2] | <C-,>
+Go to harpoon [3] | <C-.>
+Go to harpoon [4] | <C-/>
+
+
+
+
+
