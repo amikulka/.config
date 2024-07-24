@@ -7,7 +7,7 @@
   <levelTenCombat>false</levelTenCombat>
   <skipWindowPreparation>false</skipWindowPreparation>
   <sawAdvancedCharacterCreationIndicator>false</sawAdvancedCharacterCreationIndicator>
-  <timesPlayed>212</timesPlayed>
+  <timesPlayed>223</timesPlayed>
   <windowMode>1</windowMode>
   <displayIndex>0</displayIndex>
   <gamepadMode>Auto</gamepadMode>
@@ -51,10 +51,10 @@
     <stowingMode>Off</stowingMode>
     <gamepadMode>Auto</gamepadMode>
     <useLegacySlingshotFiring>false</useLegacySlingshotFiring>
-    <musicVolumeLevel>0.03</musicVolumeLevel>
-    <soundVolumeLevel>0.2</soundVolumeLevel>
-    <footstepVolumeLevel>0.15</footstepVolumeLevel>
-    <ambientVolumeLevel>0.25</ambientVolumeLevel>
+    <musicVolumeLevel>0</musicVolumeLevel>
+    <soundVolumeLevel>0.04</soundVolumeLevel>
+    <footstepVolumeLevel>0.03</footstepVolumeLevel>
+    <ambientVolumeLevel>0.04</ambientVolumeLevel>
     <snowTransparency>1</snowTransparency>
     <dialogueFontScale>1</dialogueFontScale>
     <zoomLevel>1</zoomLevel>
