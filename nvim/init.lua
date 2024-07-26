@@ -676,6 +676,7 @@ require('lazy').setup({
           typescriptreact = { 'prettier' },
           javascriptreact = { 'prettier' },
           -- yaml = { 'prettier' },
+          json = { 'prettier' },
           gitcommit = { 'ltex-ls' },
           -- Add more formatters as needed
         },

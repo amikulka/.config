@@ -25,6 +25,9 @@ return {
       },
       filesystem = {
         hijack_netrw_behavior = 'open_current',
+        filtered_items = {
+          hide_dotfiles = false,
+        },
       },
     }
   end,
