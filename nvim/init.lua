@@ -670,7 +670,7 @@ require('lazy').setup({
         -- Your other configuration settings
         formatters_by_ft = {
           lua = { 'stylua' },
-          python = { 'ruff' },
+          python = { 'ruff_format' },
           typescript = { 'prettier' },
           javascript = { 'prettier' },
           typescriptreact = { 'prettier' },
