@@ -1,4 +1,4 @@
-#!/bin/bash
+#s!/bin/bash
 
 # General Icons
 LOADING=􀖇
