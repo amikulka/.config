@@ -4,10 +4,10 @@ monitor_ids=($(aerospace list-monitors --format %{monitor-id}))
 
 for monitor in "${monitor_ids[@]}"; do
   workspaces=($(aerospace list-workspaces --monitor ${monitor}))
-  for sid in "${workspaces[@]}"; do
+  for workspace_id in "${workspaces[@]}"; do
     space=(
       space=${monitor}
-      icon="${sid}"
+      icon="${workspace_id}"
       icon.padding_left=10
       icon.padding_right=10
       padding_left=2
@@ -21,13 +21,13 @@ for monitor in "${monitor_ids[@]}"; do
       background.height=20
       background.color=$BACKGROUND_1
       background.border_color=$BACKGROUND_2
-      click_script="aerospace workspace $sid"
-      script="$PLUGIN_DIR/aerospace.sh $sid"
+      click_script="aerospace workspace $workspace_id"
+      script="$PLUGIN_DIR/aerospace.sh $workspace_id"
     )
 
-    sketchybar --add item space.$sid left    \
-               --set space.$sid "${space[@]}" \
-               --subscribe space.$sid aerospace_workspace_change
+    sketchybar --add item space.$workspace_id left    \
+               --set space.$workspace_id "${space[@]}" \
+               --subscribe space.$workspace_id aerospace_workspace_change
 
 
   done

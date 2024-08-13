@@ -687,11 +687,11 @@ require('lazy').setup({
           },
         },
         -- Leave format_on_save disabled here or set it based on a global variable
-        format_on_save = {
+        --[[ format_on_save = {
           -- I recommend these options. See :help conform.format for details.
           lsp_fallback = true,
           timeout_ms = 700,
-        },
+        }, ]]
         -- format_after_save = {
         --   lsp_fallback = true,
         --   timeout_ms = 4000,
