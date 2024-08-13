@@ -53,7 +53,8 @@ inner.horizontal = 2
 inner.vertical = 2
 outer.left = 0
 outer.bottom = 0
-outer.top = [{ monitor."retina" = 0 }, { monitor."*" = 27 }]
+# outer.top = { monitor."retina" = 0 }
+outer.top = 27
 outer.right = 0
 
 
@@ -154,4 +155,8 @@ alt-shift-l = ['join-with right', 'mode main']
 #CALLBACKS
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
 run = 'layout floating'
