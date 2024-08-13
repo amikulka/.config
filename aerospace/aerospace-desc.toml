@@ -1,0 +1,72 @@
+[View_and_Focus]
+alt-slash = 'Accordian View'
+alt-comma = 'Tiles View'
+
+
+alt-1 = 'Go to workspace 1'
+alt-2 = 'Go to workspace 2'
+alt-3 = 'Go to workspace 3'
+alt-4 = 'Go to workspace 4'
+alt-5 = 'Go to workspace 5'
+alt-6 = 'Go to workspace 6'
+alt-7 = 'Go to workspace 7'
+alt-8 = 'Go to workspace 8'
+alt-9 = 'Go to workspace 9'
+
+alt-shift-n = 'Go to next workspace'
+alt-shift-p = 'Go to previous workspace'
+
+alt-h = 'Focus window left'
+alt-j = 'Focus window down'
+alt-k = 'Focus window up'
+alt-l = 'Focus window right'
+
+alt-n = 'Focus window right'
+alt-p = 'Focus window left'
+
+meh-n = 'Focus next monitor'
+meh-p = 'Focus previous monitor'
+
+
+[Modify_and_Move_Windows]
+
+alt-backslash = 'resize smart -50'
+alt-backtick = 'resize smart +50'
+
+hyper-h = 'Move window left'
+hyper-j = 'Move window down'
+hyper-k = 'Move window up'
+hyper-l = 'Move window right'
+
+hyper-f = 'Toggle float window'
+hyper-m = 'Toggle fullscreen'
+
+hyper-1 = 'Move window to workspace 1'
+hyper-2 = 'Move window to workspace 2'
+hyper-3 = 'Move window to workspace 3'
+hyper-4 = 'Move window to workspace 4'
+hyper-5 = 'Move window to workspace 5'
+hyper-6 = 'Move window to workspace 6'
+hyper-7 = 'Move window to workspace 7'
+hyper-8 = 'Move window to workspace 8'
+hyper-9 = 'Move window to workspace 9'
+
+hyper-n = 'Move window to next workspace'
+hyper-p = 'Move window to previous workspace'
+
+
+hyper-q = 'Move window to monitor 1'
+hyper-w = 'Move window to monitor 2'
+hyper-e = 'Move window to monitor 3'
+
+
+[Service_Mode_Commands]
+alt-shift-semicolon = 'Toggle service mode'
+esc = 'Refresh config [service mode]'
+r = 'Reset layout [service mode]'
+backspace = 'Close all windows but current [service mode]'
+
+alt-shift-h = 'Join/Combine window with window left'
+alt-shift-j = 'Join/Combine window with window below'
+alt-shift-k = 'Join/Combine window with window above'
+alt-shift-l = 'Join/Combine window with window right'
