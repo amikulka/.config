@@ -32,28 +32,11 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 [workspace-to-monitor-force-assignment]
-# 1 = 'main'
-# 2 = 'main'
-# 3 = 'main'
-# 4 = ['secondary', 2, 1]
-# 5 = ['secondary', 2, 1]
-# 6 = ['secondary', 2, 1]
-# 7 = ['secondary', 3, 2, 1]
-# 8 = ['secondary', 3, 2, 1]
-# 9 = ['secondary', 3, 2, 1]
-1 = 1
-2 = 1
-3 = 1
-4 = [2, 1]
-5 = [2, 1]
-6 = [2, 1]
-7 = [3, 2, 1]
-8 = [3, 2, 1]
-9 = [3, 2, 1]
-b = ['secondary', 1]
-t = ['secondary', 2]
-w = 1
-
+browser = ['secondary', 1]
+terminal = ['secondary', 2, 1]
+work = 1
+personal = 1
+other = ['secondary', 2, 1]
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -91,18 +74,11 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 
-alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-w = 'workspace w'
-alt-t = 'workspace t'
-alt-b = 'workspace b'
+alt-w = 'workspace work'
+alt-t = 'workspace terminal'
+alt-b = 'workspace browser'
+alt-e = 'workspace personal'
+alt-o = 'workspace other'
 
 alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
 alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
@@ -135,18 +111,11 @@ alt-shift-cmd-ctrl-l = 'move right'
 alt-shift-ctrl-cmd-f = 'layout floating tiling' # Toggle between floating and tiling layout
 alt-shift-ctrl-cmd-m = 'fullscreen'             # Toggle between floating and tiling layout
 
-alt-shift-ctrl-cmd-1 = 'move-node-to-workspace 1'
-alt-shift-ctrl-cmd-2 = 'move-node-to-workspace 2'
-alt-shift-ctrl-cmd-3 = 'move-node-to-workspace 3'
-alt-shift-ctrl-cmd-4 = 'move-node-to-workspace 4'
-alt-shift-ctrl-cmd-5 = 'move-node-to-workspace 5'
-alt-shift-ctrl-cmd-6 = 'move-node-to-workspace 6'
-alt-shift-ctrl-cmd-7 = 'move-node-to-workspace 7'
-alt-shift-ctrl-cmd-8 = 'move-node-to-workspace 8'
-alt-shift-ctrl-cmd-9 = 'move-node-to-workspace 9'
-alt-shift-ctrl-cmd-t = 'move-node-to-workspace t'
-alt-shift-ctrl-cmd-w = 'move-node-to-workspace w'
-alt-shift-ctrl-cmd-b = 'move-node-to-workspace b'
+alt-shift-ctrl-cmd-t = 'move-node-to-workspace terminal'
+alt-shift-ctrl-cmd-w = 'move-node-to-workspace work'
+alt-shift-ctrl-cmd-b = 'move-node-to-workspace browser'
+alt-shift-ctrl-cmd-e = 'move-node-to-workspace personal'
+alt-shift-ctrl-cmd-o = 'move-node-to-workspace other'
 
 alt-shift-ctrl-cmd-n = [
     'move-node-to-workspace --wrap-around next',
@@ -191,24 +160,29 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-run = ['layout floating', 'move-node-to-workspace w']
+run = ['layout floating', 'move-node-to-workspace work']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = ['layout floating', 'move-node-to-workspace w']
+run = ['layout floating', 'move-node-to-workspace work']
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
-run = 'move-node-to-workspace t'
+run = 'move-node-to-workspace terminal'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace w'
+run = 'move-node-to-workspace work'
 
 [[on-window-detected]]
 if.app-id = 'com.linear'
-run = 'move-node-to-workspace w'
+run = 'move-node-to-workspace work'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace b'
+run = 'move-node-to-workspace browser'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace personal'
+
