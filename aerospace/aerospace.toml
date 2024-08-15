@@ -190,6 +190,10 @@ if.app-id = 'com.openai.chat'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace t'
 
