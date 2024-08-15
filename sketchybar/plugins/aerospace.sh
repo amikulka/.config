@@ -25,4 +25,3 @@
   args+=(--set space.$1 label="$icon_strip")
 
   sketchybar -m "${args[@]}"
-fi

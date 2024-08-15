@@ -60,11 +60,12 @@ hyper-w = 'Move window to monitor 2'
 hyper-e = 'Move window to monitor 3'
 
 
-[Service_Mode_Commands]
+[Service]
 alt-shift-semicolon = 'Toggle service mode'
-esc = 'Refresh config [service mode]'
-r = 'Reset layout [service mode]'
-backspace = 'Close all windows but current [service mode]'
+esc = 'Refresh config'
+r = 'Reset layout'
+t = 'toggle aerospace'
+backspace = 'Close all windows but current'
 
 alt-shift-h = 'Join/Combine window with window left'
 alt-shift-j = 'Join/Combine window with window below'

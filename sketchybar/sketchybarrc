@@ -65,6 +65,7 @@ defaults=(
 sketchybar --default "${defaults[@]}"
 sketchybar --add event aerospace_workspace_change
 
+
 # Left
 source "$ITEM_DIR/apple.sh"
 # source "$ITEM_DIR/spaces.sh"

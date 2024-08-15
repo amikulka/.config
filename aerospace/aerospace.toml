@@ -4,7 +4,10 @@ after-login-command = []
 # Run Sketchybar together with AeroSpace
 # sketchbar has a built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = [
+    'exec-and-forget sketchybar',
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=3.0',
+]
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = [
@@ -12,7 +15,6 @@ exec-on-workspace-change = [
     '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
-
 # Start AeroSpace at login
 start-at-login = true
 
@@ -21,7 +23,7 @@ enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # The 'accordion-padding' specifies the size of accordion padding
-accordion-padding = 10
+accordion-padding = 15
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -30,15 +32,27 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 [workspace-to-monitor-force-assignment]
-1 = 'main'
-2 = 'main'
-3 = 'main'
-4 = ['secondary', 2, 1]
-5 = ['secondary', 2, 1]
-6 = ['secondary', 2, 1]
-7 = ['secondary', 3, 2, 1]
-8 = ['secondary', 3, 2, 1]
-9 = ['secondary', 3, 2, 1]
+# 1 = 'main'
+# 2 = 'main'
+# 3 = 'main'
+# 4 = ['secondary', 2, 1]
+# 5 = ['secondary', 2, 1]
+# 6 = ['secondary', 2, 1]
+# 7 = ['secondary', 3, 2, 1]
+# 8 = ['secondary', 3, 2, 1]
+# 9 = ['secondary', 3, 2, 1]
+1 = 1
+2 = 1
+3 = 1
+4 = [2, 1]
+5 = [2, 1]
+6 = [2, 1]
+7 = [3, 2, 1]
+8 = [3, 2, 1]
+9 = [3, 2, 1]
+b = ['secondary', 1]
+t = ['secondary', 2]
+w = 1
 
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -86,6 +100,9 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+alt-w = 'workspace w'
+alt-t = 'workspace t'
+alt-b = 'workspace b'
 
 alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
 alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
@@ -94,6 +111,10 @@ alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-ar
 
 alt-n = 'focus right'
 alt-p = 'focus left'
+
+alt-a = 'focus-monitor 1'
+alt-s = 'focus-monitor 2'
+alt-d = 'focus-monitor 3'
 
 shift-alt-ctrl-n = 'focus-monitor --wrap-around next'
 shift-alt-ctrl-p = 'focus-monitor --wrap-around prev'
@@ -123,6 +144,9 @@ alt-shift-ctrl-cmd-6 = 'move-node-to-workspace 6'
 alt-shift-ctrl-cmd-7 = 'move-node-to-workspace 7'
 alt-shift-ctrl-cmd-8 = 'move-node-to-workspace 8'
 alt-shift-ctrl-cmd-9 = 'move-node-to-workspace 9'
+alt-shift-ctrl-cmd-t = 'move-node-to-workspace t'
+alt-shift-ctrl-cmd-w = 'move-node-to-workspace w'
+alt-shift-ctrl-cmd-b = 'move-node-to-workspace b'
 
 alt-shift-ctrl-cmd-n = [
     'move-node-to-workspace --wrap-around next',
@@ -134,16 +158,16 @@ alt-shift-ctrl-cmd-p = [
 ]
 
 
-alt-shift-ctrl-cmd-q = ['move-node-to-monitor 1', 'focus-monitor 1']
-alt-shift-ctrl-cmd-w = ['move-node-to-monitor 2', 'focus-monitor 2']
-alt-shift-ctrl-cmd-e = ['move-node-to-monitor 3', 'focus-monitor 3']
+alt-shift-ctrl-cmd-a = ['move-node-to-monitor 1', 'focus-monitor 1']
+alt-shift-ctrl-cmd-s = ['move-node-to-monitor 2', 'focus-monitor 2']
+alt-shift-ctrl-cmd-d = ['move-node-to-monitor 3', 'focus-monitor 3']
 
 
 alt-shift-semicolon = 'mode service'
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
+esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --reload']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-#s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+t = 'enable toggle'
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
@@ -164,3 +188,19 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace t'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace w'
+
+[[on-window-detected]]
+if.app-id = 'com.linear'
+run = 'move-node-to-workspace w'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace b'
