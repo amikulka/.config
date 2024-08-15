@@ -191,7 +191,11 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-run = 'layout floating'
+run = ['layout floating', 'move-node-to-workspace w']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['layout floating', 'move-node-to-workspace w']
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
