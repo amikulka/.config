@@ -30,6 +30,9 @@ vim.keymap.set('n', '<leader>Q', ':q!<CR>', { desc = 'Force quit buffer' })
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to system clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<M-c>', [["+y]], { desc = 'Copy to system clipboard' })
 vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank to system clipboard' })
+vim.keymap.set('n', '<leader>tc', function()
+  require('copilot.suggestion').toggle_auto_trigger()
+end, { desc = 'Toggle [C]opilot' })
 
 -- -- greatest remap ever
 -- vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without overwriting clipboard' })

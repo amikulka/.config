@@ -745,11 +745,6 @@ require('lazy').setup({
               auto_trigger = true,
             },
           }
-          local copilot = require 'copilot.suggestion'
-          vim.keymap.set({ 'n' }, '<leader>tc', function()
-            copilot.toggle_auto_trigger()
-          end, { desc = 'Toggle [C]opilot' })
-
           vim.api.nvim_set_hl(0, 'CopilotSuggestion', { fg = '#c19a6b' })
         end,
       },
