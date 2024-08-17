@@ -746,22 +746,7 @@ require('lazy').setup({
             },
           }
           local copilot = require 'copilot.suggestion'
-          vim.keymap.set({ 'i', 's' }, '<C-w>', function()
-            copilot.accept_word()
-          end)
-          vim.keymap.set({ 'i', 's' }, '<C-l>', function()
-            copilot.accept_line()
-          end)
-          vim.keymap.set({ 'i', 's' }, '<C-j>', function()
-            copilot.next()
-          end)
-          vim.keymap.set({ 'i', 's' }, '<C-k>', function()
-            copilot.prev()
-          end)
-          vim.keymap.set({ 'i', 's' }, '<C-d>', function()
-            copilot.dismiss()
-          end)
-          vim.keymap.set({ 'i', 's' }, '<leader>tc', function()
+          vim.keymap.set({ 'n' }, '<leader>tc', function()
             copilot.toggle_auto_trigger()
           end, { desc = 'Toggle [C]opilot' })
 
@@ -790,9 +775,21 @@ require('lazy').setup({
         -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert {
           -- Select the [n]ext item
-          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-n>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
           -- Select the [p]revious item
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-p>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
 
           -- scroll the documentation window [b]ack / [f]orward
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -834,25 +831,6 @@ require('lazy').setup({
               copilot.accept()
             end
           end),
-
-          ['<C-j>'] = cmp.mapping(function()
-            if copilot.is_visible() then
-              copilot.next()
-            end
-          end),
-
-          ['<C-k>'] = cmp.mapping(function()
-            if copilot.is_visible() then
-              copilot.prev()
-            end
-          end),
-
-          ['<C-w>'] = cmp.mapping(function()
-            if copilot.is_visible() then
-              copilot.accept_word()
-            end
-          end),
-
           ['<C-d>'] = cmp.mapping(function()
             if copilot.is_visible() then
               copilot.dismiss()
