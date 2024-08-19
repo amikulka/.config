@@ -32,11 +32,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 [workspace-to-monitor-force-assignment]
-browser = ['secondary', 1]
-terminal = ['secondary', 2, 1]
 work = 1
 personal = 1
+browser = ['secondary', 1]
+terminal = ['secondary', 2, 1]
 other = ['secondary', 2, 1]
+3 = 3
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -48,11 +49,10 @@ other = ['secondary', 2, 1]
 [gaps]
 inner.horizontal = 2
 inner.vertical = 2
-outer.left = 0
-outer.bottom = 0
+outer.left = 3
+outer.bottom = 3
 outer.top = [{ monitor."retina" = 0 }, 27]
-# outer.top = 27
-outer.right = 0
+outer.right = 3
 
 
 [mode.main.binding]
@@ -79,6 +79,7 @@ alt-t = 'workspace terminal'
 alt-b = 'workspace browser'
 alt-e = 'workspace personal'
 alt-o = 'workspace other'
+alt-3 = 'workspace 3'
 
 alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
 alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
@@ -116,6 +117,7 @@ alt-shift-ctrl-cmd-w = 'move-node-to-workspace work'
 alt-shift-ctrl-cmd-b = 'move-node-to-workspace browser'
 alt-shift-ctrl-cmd-e = 'move-node-to-workspace personal'
 alt-shift-ctrl-cmd-o = 'move-node-to-workspace other'
+alt-shift-ctrl-cmd-3 = 'move-node-to-workspace 3'
 
 alt-shift-ctrl-cmd-n = [
     'move-node-to-workspace --wrap-around next',
@@ -134,7 +136,7 @@ alt-shift-ctrl-cmd-d = ['move-node-to-monitor 3', 'focus-monitor 3']
 
 alt-shift-semicolon = 'mode service'
 [mode.service.binding]
-esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --reload']
+esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --reload', 'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=3.0']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 t = 'enable toggle'
 backspace = ['close-all-windows-but-current', 'mode main']
@@ -168,6 +170,10 @@ run = ['layout floating', 'move-node-to-workspace work']
 
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace terminal'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace terminal'
 
 [[on-window-detected]]

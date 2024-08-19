@@ -1,4 +1,5 @@
-return {
+return {}
+--[[ {
   'nvim-neo-tree/neo-tree.nvim',
   branch = 'v3.x',
   dependencies = {
@@ -31,7 +32,7 @@ return {
       },
     }
   end,
-}
+} ]]
 
 --[[ local config = {
     -- If a user has a sources list it will replace this one.

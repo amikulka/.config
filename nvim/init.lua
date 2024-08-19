@@ -825,7 +825,7 @@ require('lazy').setup({
             if copilot.is_visible() then
               copilot.accept()
             end
-          end),
+          end, { 'i', 's' }),
           ['<C-d>'] = cmp.mapping(function()
             if copilot.is_visible() then
               copilot.dismiss()

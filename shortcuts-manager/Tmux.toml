@@ -1,0 +1,6 @@
+[General]
+ctrl-b = 'Prefix Key'
+
+[Used with Prefix]
+prefix-i = 'Cheatsheet'
+prefix-r = 'Reload Tmux Config'
