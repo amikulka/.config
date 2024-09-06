@@ -1,6 +1,17 @@
 [General]
 ctrl-b = 'Prefix Key'
 
-[Used with Prefix]
+[Used_with_Prefix]
 prefix-i = 'Cheatsheet'
-prefix-r = 'Reload Tmux Config'
+prefix-r = 'Reload tmux config'
+"prefix-$" = 'Rename session'
+prefix-d = 'Detach from session'
+
+[CLI]
+"tmux ls" = 'List sessions'
+"tmux" = 'Start a new session'
+"tmux new -s <session_name>" = 'Start a new session called <session_name>'
+"tmux new-session -A -s <session_name>" = '"Upsert" a session called <session_name>'
+"tmux kill-ses -t <session_name>" = 'Kill a session'
+"tmux kill-session -a" = 'Kill all sessions'
+"tmux kill-session -a -t <session_name>" = 'Kill all sessions except <session_name>'

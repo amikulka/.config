@@ -35,6 +35,12 @@
       "title": "Show Tmux Shortcuts",
       "description": "All of the tmux shortcuts parsed from your config file",
       "mode": "view"
+    },
+    {
+      "name": "showWeztermShortcuts",
+      "title": "Show WezTerm Shortcuts",
+      "description": "All of the Wezterm shortcuts parsed from your config file",
+      "mode": "view"
     }
   ],
   "dependencies": {

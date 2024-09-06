@@ -26,8 +26,8 @@ meh-p = 'Focus previous monitor'
 
 [Modify_and_Move_Windows]
 
-alt-backslash = 'resize smart -50'
-alt-backtick = 'resize smart +50'
+alt-u = 'resize smart +50'
+alt-m = 'resize smart -50'
 
 hyper-h = 'Move window left'
 hyper-j = 'Move window down'
@@ -47,9 +47,9 @@ hyper-n = 'Move window to next workspace'
 hyper-p = 'Move window to previous workspace'
 
 
-hyper-q = 'Move window to monitor 1'
-hyper-w = 'Move window to monitor 2'
-hyper-e = 'Move window to monitor 3'
+hyper-a = 'Move window to monitor 1'
+hyper-s = 'Move window to monitor 2'
+hyper-d = 'Move window to monitor 3'
 
 
 [Service]

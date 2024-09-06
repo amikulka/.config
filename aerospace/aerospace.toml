@@ -101,8 +101,8 @@ alt-shift-p = 'workspace --wrap-around prev'
 
 # MODIFY/MOVE WINDOWS
 
-alt-backslash = 'resize smart -50'
-alt-backtick = 'resize smart +50'
+alt-u = 'resize smart +50'
+alt-m = 'resize smart -50'
 
 alt-shift-cmd-ctrl-h = 'move left'
 alt-shift-cmd-ctrl-j = 'move down'
@@ -157,12 +157,16 @@ if.app-id = 'com.1password.1password'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-id = 'at.eggerapps.Postico'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-run = ['layout floating', 'move-node-to-workspace work']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
@@ -191,4 +195,8 @@ run = 'move-node-to-workspace browser'
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace personal'
+
+[[on-window-detected]]
+if.app-id = 'io.zsa.keymapp'
+run = 'layout floating'
 
