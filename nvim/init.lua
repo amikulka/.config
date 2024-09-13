@@ -614,7 +614,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        -- tsserver = {},
         --
 
         lua_ls = {
@@ -687,11 +687,11 @@ require('lazy').setup({
           },
         },
         -- Leave format_on_save disabled here or set it based on a global variable
-        --[[ format_on_save = {
+        format_on_save = {
           -- I recommend these options. See :help conform.format for details.
           lsp_fallback = true,
           timeout_ms = 700,
-        }, ]]
+        },
         -- format_after_save = {
         --   lsp_fallback = true,
         --   timeout_ms = 4000,
@@ -984,7 +984,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugius.indent_line',
   require 'kickstart.plugins.lint',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

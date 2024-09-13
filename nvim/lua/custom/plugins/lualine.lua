@@ -175,6 +175,13 @@ return {
     } ]]
 
     ins_right {
+      function()
+        return 'Linters: ' .. table.concat(require('lint').get_running(), ', ')
+      end,
+      color = { fg = colors.blue },
+      padding = { right = 0 },
+    }
+    ins_right {
       -- Lsp server name .
       function()
         local msg = 'No Active Lsp'

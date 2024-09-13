@@ -4,7 +4,8 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 3000 }
-config.color_scheme = "NightLion V2"
+config.color_scheme = "Ubuntu"
+-- config.color_scheme = "Monokai Vivid"
 config.font_size = 12.0
 config.enable_csi_u_key_encoding = true
 config.hide_tab_bar_if_only_one_tab = true
