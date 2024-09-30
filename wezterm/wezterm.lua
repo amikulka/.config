@@ -10,6 +10,7 @@ config.font_size = 12.0
 config.enable_csi_u_key_encoding = true
 config.hide_tab_bar_if_only_one_tab = true
 config.disable_default_key_bindings = true
+config.audible_bell = "Disabled"
 config.inactive_pane_hsb = {
 	hue = 0.9,
 	saturation = 0.8,
