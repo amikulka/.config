@@ -47,7 +47,7 @@ M.toggle = function(window, pane)
 		insertUnique(projects, { label = tostring(label), id = tostring(id) })
 	end
 
-	local current_dir = tostring(pane:get_current_working_dir())
+	local current_dir = tostring(pane:get_current_working_dir()):sub(1, -2)
 	insertUnique(
 		projects,
 		{ label = current_dir:gsub("file://", ""):gsub("/Users/aaronmikulka", "~"), id = current_dir:gsub(".*/", "") }

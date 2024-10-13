@@ -36,6 +36,7 @@ work = 1
 personal = 1
 browser = ['secondary', 1]
 terminal = ['secondary', 2, 1]
+cursor = ['secondary', 2, 1]
 other = ['secondary', 2, 1]
 3 = 3
 
@@ -77,6 +78,7 @@ alt-comma = 'layout accordion horizontal vertical'
 alt-w = 'workspace work'
 alt-t = 'workspace terminal'
 alt-b = 'workspace browser'
+alt-c = 'workspace cursor'
 alt-e = 'workspace personal'
 alt-o = 'workspace other'
 alt-3 = 'workspace 3'
@@ -113,6 +115,7 @@ alt-shift-ctrl-cmd-f = 'layout floating tiling' # Toggle between floating and ti
 alt-shift-ctrl-cmd-m = 'fullscreen'             # Toggle between floating and tiling layout
 
 alt-shift-ctrl-cmd-t = 'move-node-to-workspace terminal'
+alt-shift-ctrl-cmd-c = 'move-node-to-workspace cursor'
 alt-shift-ctrl-cmd-w = 'move-node-to-workspace work'
 alt-shift-ctrl-cmd-b = 'move-node-to-workspace browser'
 alt-shift-ctrl-cmd-e = 'move-node-to-workspace personal'
@@ -182,7 +185,7 @@ run = 'move-node-to-workspace terminal'
 
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
-run = 'move-node-to-workspace terminal'
+run = 'move-node-to-workspace cursor'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
