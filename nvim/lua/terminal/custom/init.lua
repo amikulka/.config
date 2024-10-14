@@ -29,7 +29,6 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  require 'terminal.kickstart.plugins.lint',
   { import = 'terminal.custom.plugins' },
 }, {
   ui = {

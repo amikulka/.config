@@ -1,5 +1,6 @@
 require('nvim-vscode.config.options')
 require('nvim-vscode.config.mappings')
+require('nvim-vscode.config.vscode-map')
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then

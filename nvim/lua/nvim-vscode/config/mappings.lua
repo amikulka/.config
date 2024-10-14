@@ -1,4 +1,3 @@
--- Set to true if you have a Nerd Font installed
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Write buffer' })
 

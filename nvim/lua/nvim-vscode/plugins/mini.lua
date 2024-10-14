@@ -2,7 +2,14 @@ return {
   {
     'echasnovski/mini.nvim',
     config = function()
-      require('mini.comment').setup()
+      require('mini.comment').setup {
+        mappings = {
+          comment = 'gc',
+          comment_line = '<leader>/',
+          comment_visual = '<leader>/',
+          textobject = 'gc',
+        },
+      }
       require('mini.pairs').setup()
       require('mini.surround').setup()
       require('mini.ai').setup {
