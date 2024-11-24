@@ -25,6 +25,8 @@ end)
 return {
 	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 3000 },
 	colors = custom.colors,
+	initial_rows = 50,
+	initial_cols = 200,
 	window_frame = {
 		font_size = 13.0,
 		active_titlebar_bg = "rgba(0% 0% 0% 0%)",
