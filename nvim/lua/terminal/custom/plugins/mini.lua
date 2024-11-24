@@ -33,7 +33,7 @@ return { -- Collection of various small independent plugins/modules
           textobject = 'gc',
         },
       }
-      require('mini.pairs').setup()
+      -- require('mini.pairs').setup()
     end,
     dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring',

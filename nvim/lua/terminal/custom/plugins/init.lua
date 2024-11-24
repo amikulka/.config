@@ -344,7 +344,17 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                extraPaths = {
+                  '/Users/aaronmikulka/code/januarytech/debtsy/.venv/lib/python3.9/site-packages',
+                },
+              },
+            },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -424,13 +434,17 @@ return {
             -- Change where to find the command
             command = '/Users/aaronmikulka/.nvm/versions/node/v22.3.0/bin/prettier',
           },
+          ruff_format = {
+            command = vim.fn.executable 'ruff' and 'ruff' or '/opt/homebrew/bin/ruff',
+            args = { 'format', '--quiet', '-' },
+          },
         },
         -- Leave format_on_save disabled here or set it based on a global variable
-        format_on_save = {
-          -- I recommend these options. See :help conform.format for details.
-          lsp_fallback = true,
-          timeout_ms = 700,
-        },
+        -- format_on_save = {
+        --   -- I recommend these options. See :help conform.format for details.
+        --   lsp_fallback = true,
+        --   timeout_ms = 700,
+        -- },
         -- format_after_save = {
         --   lsp_fallback = true,
         --   timeout_ms = 4000,

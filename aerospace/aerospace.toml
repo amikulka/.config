@@ -26,18 +26,18 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 15
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 [workspace-to-monitor-force-assignment]
-work = 1
-personal = 1
-browser = ['secondary', 1]
-terminal = ['secondary', 2, 1]
-cursor = ['secondary', 2, 1]
-other = ['secondary', 2, 1]
+w = 1
+p = 1
+b = ['secondary', 1]
+t = ['secondary', 2, 1]
+c = ['secondary', 2, 1]
+o = ['secondary', 2, 1]
 3 = 3
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -75,12 +75,12 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 
-alt-w = 'workspace work'
-alt-t = 'workspace terminal'
-alt-b = 'workspace browser'
-alt-c = 'workspace cursor'
-alt-e = 'workspace personal'
-alt-o = 'workspace other'
+alt-w = 'workspace w'
+alt-t = 'workspace t'
+alt-b = 'workspace b'
+alt-c = 'workspace c'
+alt-e = 'workspace p'
+alt-o = 'workspace o'
 alt-3 = 'workspace 3'
 
 alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
@@ -114,12 +114,12 @@ alt-shift-cmd-ctrl-l = 'move right'
 alt-shift-ctrl-cmd-f = 'layout floating tiling' # Toggle between floating and tiling layout
 alt-shift-ctrl-cmd-m = 'fullscreen'             # Toggle between floating and tiling layout
 
-alt-shift-ctrl-cmd-t = 'move-node-to-workspace terminal'
-alt-shift-ctrl-cmd-c = 'move-node-to-workspace cursor'
-alt-shift-ctrl-cmd-w = 'move-node-to-workspace work'
-alt-shift-ctrl-cmd-b = 'move-node-to-workspace browser'
-alt-shift-ctrl-cmd-e = 'move-node-to-workspace personal'
-alt-shift-ctrl-cmd-o = 'move-node-to-workspace other'
+alt-shift-ctrl-cmd-t = 'move-node-to-workspace t'
+alt-shift-ctrl-cmd-c = 'move-node-to-workspace c'
+alt-shift-ctrl-cmd-w = 'move-node-to-workspace w'
+alt-shift-ctrl-cmd-b = 'move-node-to-workspace b'
+alt-shift-ctrl-cmd-e = 'move-node-to-workspace p'
+alt-shift-ctrl-cmd-o = 'move-node-to-workspace o'
 alt-shift-ctrl-cmd-3 = 'move-node-to-workspace 3'
 
 alt-shift-ctrl-cmd-n = [
@@ -151,59 +151,103 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 #CALLBACKS
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'at.eggerapps.Postico'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.openai.chat'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = ['layout floating']
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = ['layout floating', 'move-node-to-workspace work']
-
-[[on-window-detected]]
-if.app-id = 'org.alacritty'
-run = 'move-node-to-workspace terminal'
-
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace terminal'
-
-[[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'
-run = 'move-node-to-workspace cursor'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace work'
+run = 'move-node-to-workspace w'
 
 [[on-window-detected]]
 if.app-id = 'com.linear'
-run = 'move-node-to-workspace work'
+run = 'move-node-to-workspace w'
+
+[[on-window-detected]]
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace t'
+
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = 'move-node-to-workspace c'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace browser'
+run = 'move-node-to-workspace b'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace personal'
+run = 'move-node-to-workspace p'
 
 [[on-window-detected]]
-if.app-id = 'io.zsa.keymapp'
-run = 'layout floating'
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace w'
 
+# 1462  | com.apple.finder              | Finder
+# 5595  | com.apple.mail                | Mail
+# 43570 | com.1password.1password       | 1Password
+# 78100 | org.mozilla.firefox           | Firefox
+# 82604 | com.tinyspeck.slackmacgap     | Slack
+# 82622 | com.linear                    | Linear
+# 11038 | com.apple.Notes               | Notes
+# 37537 | com.apple.Preview             | Preview
+# 38955 | at.eggerapps.Postico          | Postico
+# 8737  | com.dynamodb.workbench        | NoSQL Workbench
+# 33040 | com.electron.asana            | Asana
+# 37234 | com.electron.dockerdesktop    | Docker Desktop
+# 11154 | com.apple.QuickTimePlayerX    | QuickTime Player
+# 84700 | com.postmanlabs.mac           | Postman
+# 74553 | com.github.wez.wezterm        | WezTerm
+# 98044 | com.todesktop.230313mzl4w4u92 | Cursor
+# 35664 | us.zoom.xos                   | zoom.us
+
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'com.1password.1password'
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'at.eggerapps.Postico'
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'com.openai.chat'
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'us.zoom.xos'
+# run = ['layout floating']
+#
+#
+# [[on-window-detected]]
+# if.app-id = 'org.alacritty'
+# run = 'move-node-to-workspace t'
+#
+#
+#
+# [[on-window-detected]]
+# if.app-id = 'com.tinyspeck.slackmacgap'
+# run = 'move-node-to-workspace w'
+#
+#
+# [[on-window-detected]]
+# if.app-id = 'org.mozilla.firefox'
+# run = 'move-node-to-workspace b'
+#
+# [[on-window-detected]]
+# if.app-id = 'com.google.Chrome'
+# run = 'move-node-to-workspace p'
+#
+# [[on-window-detected]]
+# if.app-id = 'io.zsa.keymapp'
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# # docker
+# if.app-id = 'com.electron.dockerdesktop'
+# run = 'layout floating'
+#

@@ -6,11 +6,12 @@ return {
     config = function()
       local lint = require 'lint'
       local mypy = lint.linters.mypy
-      mypy.args = { '--config-file', '/Users/aaronmikulka/code/januarytech/debtsy/mypy.ini' }
+      mypy.args = { '--config-file', '/Users/aaronmikulka/code/januarytech/debtsy/pyproject.toml' }
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         javascript = { 'eslint' },
         typescript = { 'eslint' },
+        -- python = { 'mypy' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
