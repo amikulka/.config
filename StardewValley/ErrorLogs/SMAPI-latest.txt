@@ -1,427 +1,154 @@
-[20:06:47 INFO  SMAPI] SMAPI 4.0.8 with Stardew Valley 1.6.8 build 24119 on macOS Unix 14.5.0
-[20:06:47 INFO  SMAPI] Mods go here: /Users/aaronmikulka/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/Mods
-[20:06:47 TRACE SMAPI] Log started at 2024-07-24T03:06:47 UTC
-[20:06:51 DEBUG SMAPI] Waiting for game to launch...
-[20:06:52 DEBUG SMAPI] Loading mod metadata...
-[20:06:52 DEBUG SMAPI] Loading mods...
-[20:06:52 TRACE SMAPI]    Console Commands (from Mods/ConsoleCommands/ConsoleCommands.dll, ID: SMAPI.ConsoleCommands)...
-[20:06:53 TRACE SMAPI]    Save Backup (from Mods/SaveBackup/SaveBackup.dll, ID: SMAPI.SaveBackup)...
-[20:06:53 TRACE SMAPI]       Detected direct console access (System.Console type) in assembly SaveBackup.dll.
-[20:06:53 TRACE SMAPI]    Content Patcher (from Mods/ContentPatcher/ContentPatcher.dll, ID: Pathoschild.ContentPatcher)...
-[20:06:53 TRACE SMAPI]    OhoDavi's StardewValley Anime Mods (from Mods/[CP] Portrait Anime Mods OhoDavi, ID: OhoDavi.SDVAnimeP) [content pack]...
-[20:06:53 TRACE SMAPI]    UI Info Suite 2 (from Mods/UIInfoSuite2/UIInfoSuite2.dll, ID: Annosz.UiInfoSuite2)...
-[20:06:53 TRACE SMAPI]    NPC Map Locations (from Mods/NPCMapLocations/NPCMapLocations.dll, ID: Bouhm.NPCMapLocations)...
-[20:06:53 INFO  SMAPI] Loaded 5 mods:
-[20:06:53 INFO  SMAPI]    Console Commands 4.0.8 by SMAPI | Adds SMAPI console commands that let you manipulate the game.
-[20:06:53 INFO  SMAPI]    Content Patcher 2.2.0 by Pathoschild | Loads content packs which edit game data, images, and maps without changing the game files.
-[20:06:53 INFO  SMAPI]    NPC Map Locations 3.1.0 by Bouhm | Shows NPCs and farmers on a modified map page for accurate tracking.
-[20:06:53 INFO  SMAPI]    Save Backup 4.0.8 by SMAPI | Automatically backs up all your saves once per day into its folder.
-[20:06:53 INFO  SMAPI]    UI Info Suite 2 2.3.4 by Annosz | Adds a useful information to the user interface. Based on Cdaragorn's excellent UI Info Suite.
+[10:42:39 INFO  SMAPI] SMAPI 4.1.8 with Stardew Valley 1.6.14 build 24317 on macOS Unix 15.1.1
+[10:42:39 INFO  SMAPI] Mods go here: ~/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/Mods
+[10:42:39 TRACE SMAPI] Log started at 2024-12-03T17:42:39 UTC
+[10:42:45 DEBUG SMAPI] Waiting for game to launch...
+[10:42:47 DEBUG SMAPI] Loading mod metadata...
+[10:42:47 DEBUG SMAPI] Loading mods...
+[10:42:47 TRACE SMAPI]    Console Commands (from Mods/ConsoleCommands/ConsoleCommands.dll, ID: SMAPI.ConsoleCommands, assembly version: 4.1.8)...
+[10:42:48 TRACE SMAPI]    Save Backup (from Mods/SaveBackup/SaveBackup.dll, ID: SMAPI.SaveBackup, assembly version: 4.1.8)...
+[10:42:48 TRACE SMAPI]       Detected direct console access (System.Console type) in assembly SaveBackup.dll.
+[10:42:48 TRACE SMAPI]    Content Patcher (from Mods/ContentPatcher/ContentPatcher.dll, ID: Pathoschild.ContentPatcher, assembly version: 2.4.4)...
+[10:42:48 TRACE SMAPI]    UI Info Suite 2 (from Mods/UIInfoSuite2/UIInfoSuite2.dll, ID: Annosz.UiInfoSuite2, assembly version: 2.3.7)...
+[10:42:48 TRACE SMAPI]    NPC Map Locations (from Mods/NPCMapLocations/NPCMapLocations.dll, ID: Bouhm.NPCMapLocations, assembly version: 3.2.2)...
+[10:42:48 TRACE SMAPI]    AutoGate (from Mods/AutoGate/AutoGate.dll, ID: AutoGate, assembly version: 1.3.5)...
+[10:42:48 INFO  SMAPI] Loaded 6 mods:
+[10:42:48 INFO  SMAPI]    AutoGate 1.3.5 by Teban100 | Makes passing through gates automatic.
+[10:42:48 INFO  SMAPI]    Console Commands 4.1.8 by SMAPI | Adds SMAPI console commands that let you manipulate the game.
+[10:42:48 INFO  SMAPI]    Content Patcher 2.4.4 by Pathoschild | Loads content packs which edit game data, images, and maps without changing the game files.
+[10:42:48 INFO  SMAPI]    NPC Map Locations 3.2.2 by Bouhm | Shows NPCs and farmers on a modified map page for accurate tracking.
+[10:42:48 INFO  SMAPI]    Save Backup 4.1.8 by SMAPI | Automatically backs up all your saves once per day into its folder.
+[10:42:48 INFO  SMAPI]    UI Info Suite 2 2.3.7 by Annosz | Adds a useful information to the user interface. Based on Cdaragorn's excellent UI Info Suite.
 
-[20:06:53 INFO  SMAPI] Loaded 1 content packs:
-[20:06:53 INFO  SMAPI]    OhoDavi's StardewValley Anime Mods 1.6.0 by OhoDavi | for Content Patcher | Replaces the Vanilla Portraits with OhoDavi's Anime-like Portraits.
+[10:42:48 TRACE SMAPI]    Direct console access
+[10:42:48 TRACE SMAPI]    --------------------------------------------------
+[10:42:48 TRACE SMAPI]       These mods access the SMAPI console window directly. This is more fragile, and their output may not
+[10:42:48 TRACE SMAPI]       be logged by SMAPI.
 
-[20:06:53 INFO  SMAPI] Found 1 mod with warnings:
-[20:06:53 DEBUG SMAPI] Launching mods...
-[20:06:53 TRACE SMAPI]    Found mod-provided API (ContentPatcher.Framework.ContentPatcherAPI).
-[20:06:53 TRACE Save Backup] Backed up to /Users/aaronmikulka/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/save-backups/2024-07-24 - SMAPI 4.0.8 with Stardew Valley 1.6.8.zip.
-[20:06:53 TRACE Save Backup] Deleting 2024-06-26 - SMAPI 4.0.8 with Stardew Valley 1.6.8.zip...
-[20:06:53 DEBUG SMAPI] Mods loaded and ready!
-[20:06:53 TRACE SMAPI] Checking for updates...
-[20:06:54 TRACE game] setGameMode( 'titleScreenGameMode (0)' )
-[20:06:54 TRACE SMAPI]    SMAPI okay.
-[20:06:54 TRACE SMAPI]    Checking for updates to 4 mods...
-[20:06:54 TRACE game] Steam logged on: True
-[20:06:54 TRACE game] Initializing GalaxySDK
-[20:06:54 TRACE game] Requesting Steam app ticket
+[10:42:48 TRACE SMAPI]       - Save Backup
 
-[20:06:54 ALERT SMAPI] You can update 1 mod:
-[20:06:54 ALERT SMAPI]    Content Patcher 2.3.0: https://www.nexusmods.com/stardewvalley/mods/1915 (you have 2.2.0)
-[20:06:54 INFO  SMAPI] Type 'help' for help, or 'help <cmd>' for a command's usage
-[20:06:55 TRACE UI Info Suite 2] Registered Sound: UIInfoSuite.sounds.LevelUp
-[20:06:55 TRACE game] Signing into GalaxySDK
-[20:06:55 INFO  Content Patcher] Some content packs haven't been updated for Stardew Valley 1.6.0. Content Patcher will try to auto-migrate them, but compatibility isn't guaranteed.
-
-Affected content packs:
-- OhoDavi's StardewValley Anime Mods
-
-For mod authors, see how to update a mod: https://smapi.io/cp-migrate.
-[20:06:55 TRACE game] Registered Data/Triggers action: Pathoschild.ContentPatcher_MigrateIds
-[20:06:55 TRACE Content Patcher] Requested cache invalidation for all assets matching a predicate.
-[20:06:55 TRACE SMAPI] Invalidated 0 cache entries.
-[20:06:55 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:320 Y:180 Width:1280 Height:720}
-[20:06:56 TRACE game] Galaxy auth success
-[20:06:56 TRACE game] Galaxy signed in
-[20:06:56 TRACE game] Galaxy logged on
-[20:06:57 TRACE game] Successfully set GOG Galaxy profile name.
-[20:12:03 TRACE SMAPI] Synchronizing 'Farm_SpaceCheck' task...
-[20:12:03 TRACE SMAPI]    task complete.
-[20:12:09 TRACE SMAPI] Synchronizing 'Find Save Games' task...
-[20:12:10 TRACE SMAPI]    task complete.
-[20:12:15 TRACE game] Starting client. Protocol version: 1.6.6
-[20:12:15 TRACE game] Resolving Steam lobby via Galaxy lobby 129831303014855477
-[20:12:15 TRACE game] Resolving Steam host via Steam lobby 109775241341363465
-[20:12:15 TRACE game] Found Steam host 76561199049005481
-[20:12:15 TRACE game] Client connecting to server 76561199049005481
-[20:12:16 TRACE game] Client connected to server 76561199049005481
-[20:12:24 TRACE SMAPI] Content Patcher edited Data/Locations.
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Abigail (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Caroline (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Clint (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Demetrius (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Willy (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Elliott (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 WARN  Content Patcher] Can't apply image patch "OhoDavi's StardewValley Anime Mods > EditImage Portraits/Emily #1" to Portraits/Emily: the FromFile file 'assets/Emily.png' doesn't exist.
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Emily (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Evelyn (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/George (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Gus (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Haley (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Harvey (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Jas (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Jodi (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Alex (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Leah (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Lewis (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Linus (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Marlon (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Marnie (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Maru (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Pam (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Penny (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Pierre (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Robin (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Sam (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Sebastian (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Shane (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Vincent (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Wizard (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Dwarf (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Sandy (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Krobus (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Gunther (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/Henchman (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE SMAPI] Content Patcher edited Portraits/MrQi (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:12:25 TRACE game] sendPlayerIntroduction 201625121182582379
-[20:12:25 TRACE game] gameMode was 'titleScreenGameMode (0)', set to 'loadingMode (6)'.
-[20:12:25 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:320 Y:180 Width:1280 Height:720}
-[20:12:25 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:320 Y:180 Width:1280 Height:720}
-[20:12:25 TRACE SMAPI] Received context for host -5631993648583757434 running SMAPI 4.0.0 with 6 mods.
-[20:12:26 TRACE game] gameMode was 'loadingMode (6)', set to 'playingGameMode (3)'.
-[20:12:26 TRACE SMAPI] Synchronizing 'ClientOptions_Load' task...
-[20:12:26 TRACE SMAPI]    task complete.
-[20:12:26 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:320 Y:180 Width:1280 Height:720}
-[20:12:27 TRACE SMAPI] Context: loaded save '_370235830', starting winter 26 Y1, locale set to . Farmhand with 2 players online.
-[20:12:27 INFO  UI Info Suite 2] Setting up icon sheet
-[20:12:27 TRACE SMAPI] NPC Map Locations loaded asset 'Mods/Bouhm.NPCMapLocations/NPCs'.
-[20:12:27 TRACE SMAPI] NPC Map Locations loaded asset 'Mods/Bouhm.NPCMapLocations/Locations'.
-[20:12:27 WARN  NPC Map Locations] Since the server host doesn't have NPC Map Locations installed, NPC locations can't be synced.
-[20:12:27 TRACE NPC Map Locations] Unknown locations: Cellar2, Cellar3, Cellar4, Cellar5, Cellar6, Cellar7, Cellar8, LewisBasement
-[20:12:27 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:320 Y:180 Width:1280 Height:720}
-[20:12:30 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:320 Y:180 Width:1280 Height:720}
-[20:13:25 TRACE game] Warping to Farm
-[20:13:33 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:14:24 TRACE SMAPI] Received connection for vanilla farmhand -3011220026053219809.
-[20:14:37 TRACE game] Warping to Barn6b1d57c1-a91c-4524-9596-93d8b635aa9d
-[20:15:09 TRACE game] Warping to Farm
-[20:15:11 TRACE SMAPI] Received connection for vanilla farmhand 3253966564754700091.
-[20:15:14 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[20:15:51 TRACE game] Warping to Farm
-[20:16:04 TRACE game] Warping to FarmCave
-[20:16:13 TRACE game] Warping to Farm
-[20:16:17 TRACE game] Warping to Greenhouse
-[20:16:31 TRACE game] Warping to Farm
-[20:17:23 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:17:24 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:17:31 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:18:47 TRACE game] Warping to BusStop
-[20:18:57 TRACE game] Warping to Mine
-[20:19:11 TRACE game] Warping to UndergroundMine15
-[20:19:24 TRACE game] Warping to UndergroundMine16
-[20:19:35 TRACE game] Warping to UndergroundMine17
-[20:20:13 TRACE game] Warping to UndergroundMine18
-[20:20:51 TRACE game] Warping to UndergroundMine19
-[20:23:43 TRACE game] Warping to UndergroundMine20
-[20:23:51 TRACE game] Warping to UndergroundMine21
-[20:24:13 TRACE game] Warping to UndergroundMine22
-[20:24:20 TRACE game] Warping to UndergroundMine23
-[20:25:11 TRACE game] Warping to UndergroundMine24
-[20:25:16 TRACE game] Warping to Mine
-[20:25:21 TRACE game] Warping to BusStop
-[20:25:30 TRACE game] Warping to Farm
-[20:25:35 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[20:27:05 TRACE SMAPI] Synchronizing 'NewDay' task...
-[20:27:07 TRACE SMAPI]    task complete.
-[20:27:07 TRACE SMAPI] Context: before save.
-[20:29:08 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:29:12 TRACE SMAPI] Context: after save, starting winter 27 Y1.
-[20:29:50 TRACE game] Warping to Farm
-[20:30:21 TRACE game] Warping to Barn6b1d57c1-a91c-4524-9596-93d8b635aa9d
-[20:30:58 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:31:07 TRACE game] Warping to Farm
-[20:31:12 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[20:32:00 TRACE game] Warping to Farm
-[20:32:25 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[20:32:36 TRACE game] Warping to Farm
-[20:33:38 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[20:33:48 TRACE game] Warping to Farm
-[20:34:06 TRACE game] Warping to Greenhouse
-[20:34:20 TRACE game] Warping to Farm
-[20:36:52 TRACE game] Warping to Backwoods
-[20:37:06 TRACE game] Warping to Mountain
-[20:38:46 TRACE game] Warping to AdventureGuild
-[20:39:01 TRACE game] Warping to Mountain
-[20:39:30 TRACE game] Warping to BusStop
-[20:39:39 TRACE game] Warping to Farm
-[20:41:00 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[20:43:17 TRACE SMAPI] Synchronizing 'NewDay' task...
-[20:43:18 TRACE SMAPI]    task complete.
-[20:43:18 TRACE SMAPI] Context: before save.
-[20:43:39 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:43:42 TRACE SMAPI] Context: after save, starting winter 28 Y1.
-[20:44:00 TRACE game] Warping to Farm
-[20:44:17 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:44:38 TRACE game] Warping to Greenhouse
-[20:44:58 TRACE game] Warping to Farm
-[20:45:02 TRACE game] Warping to FarmCave
-[20:45:04 TRACE game] Warping to Farm
-[20:45:13 TRACE game] Warping to Barn6b1d57c1-a91c-4524-9596-93d8b635aa9d
-[20:45:45 TRACE game] Warping to Farm
-[20:45:51 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[20:46:05 TRACE game] Warping to Farm
-[20:47:07 TRACE game] Warping to BusStop
-[20:47:16 TRACE game] Warping to Town
-[20:47:38 TRACE game] Warping to Beach
-[20:47:39 TRACE SMAPI] Content Patcher edited Portraits/Willy (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:48:11 TRACE game] Warping to Beach
-[20:52:21 TRACE game] Warping to Town
-[20:52:41 TRACE game] Warping to BusStop
-[20:52:50 TRACE game] Warping to Farm
-[20:53:53 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[20:53:56 TRACE game] Warping to Farm
-[20:54:02 TRACE game] Warping to BusStop
-[20:54:10 TRACE game] Warping to Town
-[20:54:29 TRACE game] Warping to ManorHouse
-[20:54:46 TRACE game] Warping to Town
-[20:55:09 TRACE game] Warping to BusStop
-[20:55:17 TRACE game] Warping to Farm
-[20:55:35 TRACE game] Warping to Greenhouse
-[20:56:30 TRACE game] Warping to Farm
-[20:56:44 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[20:56:57 TRACE SMAPI] Synchronizing 'NewDay' task...
-[20:56:59 TRACE SMAPI] Content Patcher edited Portraits/Kent (for the 'OhoDavi's StardewValley Anime Mods' content pack).
-[20:57:00 TRACE SMAPI]    task complete.
-[20:57:00 TRACE SMAPI] Context: before save.
-[20:57:19 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[20:57:23 TRACE SMAPI] Context: after save, starting spring 1 Y2.
-[20:57:25 TRACE game] Warping to Farm
-[20:57:32 TRACE game] Warping to Farm
-[20:57:45 TRACE game] Warping to Farm
-[20:59:29 TRACE game] Warping to Barn6b1d57c1-a91c-4524-9596-93d8b635aa9d
-[20:59:40 TRACE game] Warping to Farm
-[20:59:53 TRACE game] Warping to FarmCave
-[20:59:54 TRACE game] Warping to Farm
-[21:00:30 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:00:51 TRACE game] Warping to Backwoods
-[21:01:04 TRACE game] Warping to Mountain
-[21:01:13 TRACE game] Warping to ScienceHouse
-[21:01:33 TRACE game] Warping to Mountain
-[21:01:39 TRACE game] Warping to Backwoods
-[21:01:52 TRACE game] Warping to Farm
-[21:02:11 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:02:15 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:05:04 TRACE game] Warping to Backwoods
-[21:05:17 TRACE game] Warping to Mountain
-[21:05:23 TRACE game] Warping to ScienceHouse
-[21:05:32 TRACE game] Warping to Mountain
-[21:05:39 TRACE game] Warping to Backwoods
-[21:05:53 TRACE game] Warping to Farm
-[21:07:01 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:07:20 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:08:36 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:10:37 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[21:12:05 TRACE SMAPI] Synchronizing 'NewDay' task...
-[21:12:05 TRACE game] Applied trigger action 'Mail_Pierre_FertilizersHighQuality' with actions [AddMail Current fertilizers2].
-[21:12:05 TRACE game] Applied trigger action 'Mail_Pierre_FertilizersHighQuality' with actions [AddMail Current fertilizers2].
-[21:12:07 TRACE SMAPI]    task complete.
-[21:12:07 TRACE SMAPI] Context: before save.
-[21:12:21 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:12:25 TRACE SMAPI] Context: after save, starting spring 2 Y2.
-[21:12:33 TRACE game] Warping to Farm
-[21:13:42 TRACE game] Warping to Backwoods
-[21:13:55 TRACE game] Warping to Mountain
-[21:14:37 TRACE game] Warping to ScienceHouse
-[21:14:42 TRACE game] Warping to Mountain
-[21:14:49 TRACE game] Warping to Backwoods
-[21:15:01 TRACE game] Warping to Farm
-[21:16:23 TRACE game] Warping to BusStop
-[21:16:38 TRACE game] Warping to Desert
-[21:16:54 TRACE game] Warping to SkullCave
-[21:16:56 TRACE game] Warping to UndergroundMine121
-[21:17:33 TRACE game] Warping to UndergroundMine124
-[21:18:14 TRACE game] Warping to UndergroundMine125
-[21:18:34 TRACE game] Warping to UndergroundMine131
-[21:19:13 TRACE game] Warping to UndergroundMine132
-[21:19:19 TRACE game] Warping to UndergroundMine133
-[21:19:51 TRACE game] Warping to UndergroundMine134
-[21:20:02 TRACE game] Warping to UndergroundMine135
-[21:20:32 TRACE SMAPI] Player quit: 3253966564754700091
-[21:20:44 TRACE SMAPI] Received connection for vanilla farmhand 3253966564754700091.
-[21:21:37 TRACE game] Warping to UndergroundMine136
-[21:22:40 TRACE game] Warping to UndergroundMine137
-[21:22:51 TRACE game] Warping to UndergroundMine138
-[21:23:21 TRACE game] Warping to UndergroundMine139
-[21:24:08 TRACE game] Warping to UndergroundMine144
-[21:25:15 TRACE game] Warping to UndergroundMine145
-[21:25:57 TRACE game] Warping to UndergroundMine146
-[21:26:15 TRACE game] Warping to UndergroundMine147
-[21:26:29 TRACE game] Warping to Hospital
-[21:26:47 TRACE game] Warping to Hospital
-[21:26:55 TRACE game] Warping to Town
-[21:27:06 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[21:27:14 TRACE SMAPI] Synchronizing 'NewDay' task...
-[21:27:17 TRACE SMAPI]    task complete.
-[21:27:21 TRACE SMAPI] Context: before save.
-[21:27:44 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:27:48 TRACE SMAPI] Context: after save, starting spring 3 Y2.
-[21:27:51 TRACE game] Warping to Farm
-[21:28:26 TRACE game] Warping to Greenhouse
-[21:28:38 TRACE game] Warping to Farm
-[21:28:42 TRACE game] Warping to FarmCave
-[21:28:48 TRACE game] Warping to Farm
-[21:30:53 TRACE game] Warping to BusStop
-[21:31:10 TRACE game] Warping to Desert
-[21:31:32 TRACE game] Warping to SkullCave
-[21:31:36 TRACE game] Warping to UndergroundMine121
-[21:31:57 TRACE game] Warping to UndergroundMine126
-[21:32:12 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:32:30 TRACE game] Warping to UndergroundMine127
-[21:32:42 TRACE game] Warping to UndergroundMine128
-[21:32:46 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:33:34 TRACE game] Warping to UndergroundMine133
-[21:33:55 TRACE game] Warping to UndergroundMine134
-[21:34:16 TRACE game] Warping to UndergroundMine135
-[21:34:27 TRACE game] Warping to UndergroundMine136
-[21:35:23 TRACE game] Warping to UndergroundMine139
-[21:35:38 TRACE game] Warping to UndergroundMine140
-[21:36:10 TRACE game] Warping to UndergroundMine141
-[21:36:29 TRACE game] Warping to UndergroundMine142
-[21:37:07 TRACE game] Warping to UndergroundMine143
-[21:37:23 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:37:47 TRACE game] Warping to UndergroundMine146
-[21:38:08 TRACE game] Warping to UndergroundMine147
-[21:38:23 TRACE game] Warping to UndergroundMine148
-[21:38:50 TRACE game] Warping to UndergroundMine149
-[21:39:05 TRACE game] Warping to UndergroundMine150
-[21:39:51 TRACE game] Warping to UndergroundMine151
-[21:40:11 TRACE game] Warping to UndergroundMine152
-[21:40:30 TRACE game] Warping to UndergroundMine160
-[21:41:03 TRACE game] Warping to UndergroundMine161
-[21:41:52 TRACE game] Warping to UndergroundMine162
-[21:42:13 TRACE game] Warping to Farm
-[21:42:28 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[21:42:29 TRACE SMAPI] Synchronizing 'NewDay' task...
-[21:42:31 TRACE SMAPI]    task complete.
-[21:42:31 TRACE SMAPI] Context: before save.
-[21:42:41 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:42:44 TRACE SMAPI] Context: after save, starting spring 4 Y2.
-[21:42:51 TRACE game] Warping to Farm
-[21:43:09 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:43:15 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:43:18 TRACE game] Warping to Greenhouse
-[21:43:58 TRACE game] Warping to Farm
-[21:44:02 TRACE game] Warping to FarmCave
-[21:44:03 TRACE game] Warping to Farm
-[21:44:16 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[21:44:26 TRACE game] Warping to Farm
-[21:44:32 TRACE game] Warping to Barn6b1d57c1-a91c-4524-9596-93d8b635aa9d
-[21:45:06 TRACE game] Warping to Farm
-[21:46:36 TRACE game] Warping to Backwoods
-[21:46:48 TRACE game] Warping to Mountain
-[21:46:57 TRACE game] Warping to ScienceHouse
-[21:47:19 TRACE game] Warping to ScienceHouse
-[21:47:24 TRACE game] Warping to Mountain
-[21:47:29 TRACE game] Warping to Town
-[21:48:04 TRACE game] Warping to Forest
-[21:48:14 TRACE game] Warping to AnimalShop
-[21:48:32 TRACE game] Warping to Forest
-[21:48:34 TRACE game] Warping to AnimalShop
-[21:48:45 TRACE game] Warping to Forest
-[21:49:05 TRACE game] Warping to Farm
-[21:50:40 TRACE game] Warping to Forest
-[21:51:07 TRACE game] Warping to WizardHouse
-[21:51:17 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:51:22 TRACE game] Warping to Forest
-[21:51:59 TRACE game] Warping to Farm
-[21:52:17 TRACE game] Warping to BusStop
-[21:52:27 TRACE game] Warping to Town
-[21:52:30 TRACE game] Warping to Mine
-[21:52:35 TRACE game] Warping to UndergroundMine75
-[21:52:48 TRACE game] Warping to UndergroundMine76
-[21:53:00 TRACE game] Warping to UndergroundMine77
-[21:53:28 TRACE game] Warping to UndergroundMine78
-[21:53:42 TRACE game] Warping to UndergroundMine79
-[21:53:58 TRACE game] Warping to UndergroundMine80
-[21:54:04 TRACE game] Warping to Mine
-[21:54:50 TRACE game] Warping to UndergroundMine70
-[21:55:00 TRACE game] Warping to UndergroundMine71
-[21:55:19 TRACE game] Warping to UndergroundMine72
-[21:55:35 TRACE game] Warping to UndergroundMine73
-[21:55:38 TRACE game] Warping to UndergroundMine74
-[21:55:46 TRACE game] Warping to UndergroundMine75
-[21:55:52 TRACE game] Warping to Mine
-[21:55:58 TRACE game] Warping to BusStop
-[21:56:06 TRACE game] Warping to Farm
-[21:56:16 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[21:56:41 TRACE SMAPI] Synchronizing 'NewDay' task...
-[21:56:43 TRACE SMAPI]    task complete.
-[21:56:43 TRACE SMAPI] Context: before save.
-[21:56:56 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:56:59 TRACE SMAPI] Context: after save, starting spring 5 Y2.
-[21:57:02 TRACE game] Warping to Farm
-[21:59:13 TRACE game] Warping to Cabinfd1a85a6-b783-4982-b82e-68e4e68da5ad
-[21:59:14 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[21:59:16 TRACE game] Warping to Farm
-[22:00:18 TRACE game] Warping to Cabin16d5b163-6abb-4c66-9569-f72a3a10683a
-[22:00:26 TRACE game] Warping to Farm
-[22:01:32 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[22:01:47 TRACE game] Warping to Farm
-[22:01:52 TRACE game] Warping to Barn6b1d57c1-a91c-4524-9596-93d8b635aa9d
-[22:02:11 TRACE game] Warping to Farm
-[22:02:13 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:02:39 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:02:45 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:03:05 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:03:09 TRACE game] Warping to Coopbc64d3cc-fda7-43b5-b071-27413bfc5816
-[22:03:53 TRACE game] Warping to Farm
-[22:06:25 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:07:16 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:07:52 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:08:17 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:09:48 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[22:09:58 TRACE game] Warping to Farm
-[22:10:11 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:10:25 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:10:41 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:10:56 TRACE game] Warping to FarmHouse4e589cc7-ec29-46af-bba0-2ccb327e0904
-[22:10:58 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:11:35 TRACE SMAPI] Synchronizing 'NewDay' task...
-[22:11:38 TRACE SMAPI]    task complete.
-[22:12:17 TRACE SMAPI] Context: before save.
-[22:12:25 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:12:29 TRACE SMAPI] Context: after save, starting spring 6 Y2.
-[22:12:32 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:12:33 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:12:36 TRACE SMAPI] Player quit: 3253966564754700091
-[22:12:40 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:12:41 TRACE game] Client disconnected from server 76561199049005481
-[22:12:41 TRACE game] Disconnected: HostLeft
-[22:12:41 TRACE game] setGameMode( 'titleScreenGameMode (0)' )
-[22:12:41 TRACE SMAPI] Context: returning to title
-[22:12:41 TRACE game] Client disconnecting from server 76561199049005481
-[22:12:41 TRACE game] Disconnected: ExitedToMainMenu
-[22:12:41 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:12:41 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
-[22:12:45 TRACE game] Disconnected: ClosedGame
-[22:12:45 TRACE SMAPI] Disposing...
-[22:12:45 TRACE SMAPI] Disposing the content coordinator. Content managers will no longer be usable after this point.
+[10:42:48 DEBUG SMAPI] Launching mods...
+[10:42:48 TRACE SMAPI]    Found mod-provided API (ContentPatcher.Framework.ContentPatcherAPI).
+[10:42:48 TRACE Save Backup] Backed up to /Users/aaronmikulka/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/save-backups/2024-12-03 - SMAPI 4.1.8 with Stardew Valley 1.6.14.zip.
+[10:42:48 DEBUG SMAPI] Mods loaded and ready!
+[10:42:48 TRACE SMAPI] Checking for updates...
+[10:42:49 TRACE game] setGameMode( 'titleScreenGameMode (0)' )
+[10:42:50 TRACE game] Steam logged on: True
+[10:42:50 TRACE game] Initializing GalaxySDK
+[10:42:50 TRACE game] Requesting Steam app ticket
+[10:42:51 INFO  SMAPI] Type 'help' for help, or 'help <cmd>' for a command's usage
+[10:42:51 TRACE UI Info Suite 2] Registered Sound: Annosz.UiInfoSuite2.sounds.LevelUp
+[10:42:52 TRACE game] Signing into GalaxySDK
+[10:42:52 TRACE game] Registered trigger action handler 'Pathoschild.ContentPatcher_MigrateIds'.
+[10:42:52 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:116 Y:131 Width:1280 Height:720}
+[10:42:52 TRACE SMAPI]    SMAPI okay.
+[10:42:52 TRACE SMAPI]    Checking for updates to 4 mods...
+[10:42:53 TRACE SMAPI]    All mods up to date.
+[10:43:05 TRACE game] Galaxy auth success
+[10:43:05 TRACE game] Galaxy signed in
+[10:43:05 TRACE game] Galaxy logged on
+[10:43:07 TRACE game] Successfully set GOG Galaxy profile name.
+[10:43:31 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[10:43:34 TRACE SMAPI] Synchronizing 'Find Save Games' task...
+[10:43:34 TRACE SMAPI]    task complete.
+[10:43:38 TRACE game] gameMode was 'titleScreenGameMode (0)', set to 'loadingMode (6)'.
+[10:43:38 TRACE SMAPI] Game loader synchronizing...
+[10:43:38 TRACE game] getLoadEnumerator('Squirts_374457175')
+[10:43:38 TRACE SMAPI] Synchronizing 'Load_ReadSave' task...
+[10:43:40 TRACE SMAPI]    task complete.
+[10:43:40 TRACE SMAPI] Synchronizing 'Load_LoadForNewGame' task...
+[10:43:41 TRACE SMAPI]    task complete.
+[10:43:41 TRACE SMAPI] Synchronizing 'Load_Farmer' task...
+[10:43:41 TRACE SMAPI]    task complete.
+[10:43:41 TRACE SMAPI] Synchronizing 'Load_Locations' task...
+[10:43:42 TRACE SMAPI]    task complete.
+[10:43:42 TRACE game] gameMode was 'loadingMode (6)', set to 'playingGameMode (3)'.
+[10:43:42 TRACE game] getLoadEnumerator() exited, elapsed = '00:00:04.2937362'
+[10:43:42 TRACE game] setGameMode( 'playingGameMode (3)' )
+[10:43:42 TRACE SMAPI] Game loader done.
+[10:43:42 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[10:43:43 TRACE SMAPI] Context: loaded save 'Squirts_374457175', starting spring 10 Y5, locale set to . Single-player.
+[10:43:43 INFO  UI Info Suite 2] Setting up icon sheet
+[10:43:43 TRACE SMAPI] NPC Map Locations loaded asset 'Mods/Bouhm.NPCMapLocations/NPCs'.
+[10:43:43 TRACE SMAPI] NPC Map Locations loaded asset 'Mods/Bouhm.NPCMapLocations/Locations'.
+[10:43:43 TRACE NPC Map Locations] Unknown locations: LewisBasement
+[10:44:00 TRACE game] Warping to Farm
+[10:44:38 TRACE game] Warping to Coopf3f2eaff-464d-453c-83f5-1f2d6d3e38a9
+[10:44:53 TRACE game] Warping to Farm
+[10:44:54 TRACE game] Warping to Coopf3f2eaff-464d-453c-83f5-1f2d6d3e38a9
+[10:44:59 TRACE game] Warping to Farm
+[10:45:02 TRACE game] Warping to Coop30c61829-6d00-452f-974e-d868d9186403
+[10:45:16 TRACE game] Warping to Farm
+[10:45:19 TRACE game] Warping to Barn8269d243-64a0-4fd7-a542-25b18b728d19
+[10:45:33 TRACE game] Warping to Farm
+[10:46:07 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[10:46:16 TRACE game] Warping to Beach
+[10:46:25 TRACE game] Warping to FishShop
+[10:46:29 TRACE game] Warping to BoatTunnel
+[10:46:34 TRACE game] Warping to IslandSouth
+[10:46:50 TRACE game] Warping to IslandWest
+[10:47:14 TRACE game] Warping to QiNutRoom
+[10:47:31 TRACE game] Warping to IslandWest
+[10:48:37 TRACE game] Warping to QiNutRoom
+[10:49:02 TRACE game] Warping to IslandWest
+[10:49:06 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[10:49:26 TRACE game] Warping to Farm
+[10:50:54 TRACE game] Warping to BusStop
+[10:51:04 TRACE game] Warping to Town
+[10:51:12 TRACE game] Warping to SeedShop
+[10:51:36 TRACE game] Warping to Sunroom
+[10:51:50 TRACE game] Warping to SeedShop
+[10:52:03 TRACE game] Warping to Town
+[10:52:12 TRACE game] Warping to BusStop
+[10:52:18 TRACE game] Warping to Farm
+[10:59:16 TRACE game] Warping to Greenhouse
+[10:59:19 TRACE game] Warping to Farm
+[10:59:22 TRACE game] Warping to Shedec579350-b2f6-4dd1-9aa8-a10046930d2c
+[10:59:24 TRACE game] Warping to Farm
+[10:59:54 TRACE game] Warping to FarmHouse
+[10:59:59 TRACE SMAPI] Synchronizing 'NewDay' task...
+[11:00:00 TRACE SMAPI]    task complete.
+[11:00:00 TRACE SMAPI] Context: before save.
+[11:00:06 TRACE game] SaveGame.Save() called.
+[11:00:06 TRACE SMAPI] Synchronizing 'Save' task...
+[11:00:06 TRACE game] Saving without compression...
+[11:00:07 TRACE SMAPI]    task complete.
+[11:00:07 TRACE game] SaveGame.Save() completed without exceptions.
+[11:00:11 TRACE SMAPI] Context: after save, starting spring 11 Y5.
+[11:00:23 TRACE game] Warping to Cellar
+[11:00:50 TRACE game] Warping to Farmhouse
+[11:00:54 TRACE game] Warping to Farm
+[11:01:24 TRACE game] Warping to Shedec579350-b2f6-4dd1-9aa8-a10046930d2c
+[11:01:25 TRACE game] Warping to Farm
+[11:02:02 TRACE game] Warping to Coopf3f2eaff-464d-453c-83f5-1f2d6d3e38a9
+[11:02:17 TRACE game] Warping to Farm
+[11:02:19 TRACE game] Warping to Coop30c61829-6d00-452f-974e-d868d9186403
+[11:02:30 TRACE game] Warping to Farm
+[11:02:35 TRACE game] Warping to Barn8269d243-64a0-4fd7-a542-25b18b728d19
+[11:02:51 TRACE game] Warping to Farm
+[11:03:48 TRACE game] Warping to Shedec579350-b2f6-4dd1-9aa8-a10046930d2c
+[11:03:50 TRACE game] Warping to Farm
+[11:04:00 TRACE game] Warping to BusStop
+[11:04:07 TRACE game] Warping to Town
+[11:04:22 TRACE game] Warping to SeedShop
+[11:04:33 TRACE game] Warping to Town
+[11:04:47 TRACE game] Warping to BusStop
+[11:04:54 TRACE game] Warping to Farm
+[11:05:09 TRACE game] Warping to Greenhouse
+[11:05:30 TRACE game] Warping to Farm
+[11:05:40 TRACE game] Warping to Backwoods
+[11:05:54 TRACE game] Warping to Mountain
+[11:05:59 TRACE game] Warping to ScienceHouse
+[11:06:26 TRACE game] Warping to ScienceHouse
+[11:06:35 TRACE game] Warping to Mountain
+[11:06:41 TRACE game] Warping to Farm
+[11:06:50 TRACE game] Warping to Beach
+[11:06:56 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[11:07:02 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[11:07:06 TRACE game] Warping to ElliottHouse
+[11:07:44 TRACE game] Warping to ElliottHouse
+[11:07:53 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:37 Width:1512 Height:945}
+[12:58:17 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:1920 Height:1080}
+[12:59:26 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[12:59:43 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:0 Y:0 Width:3008 Height:1692}
+[12:59:49 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:313 Y:600 Width:1280 Height:720}
+[13:01:37 TRACE game] Window_ClientSizeChanged(); Window.ClientBounds={X:311 Y:602 Width:1280 Height:720}

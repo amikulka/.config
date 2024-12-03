@@ -7,13 +7,13 @@
   <levelTenCombat>false</levelTenCombat>
   <skipWindowPreparation>false</skipWindowPreparation>
   <sawAdvancedCharacterCreationIndicator>false</sawAdvancedCharacterCreationIndicator>
-  <timesPlayed>223</timesPlayed>
+  <timesPlayed>234</timesPlayed>
   <windowMode>1</windowMode>
   <displayIndex>0</displayIndex>
   <gamepadMode>Auto</gamepadMode>
   <playerLimit>-1</playerLimit>
-  <fullscreenResolutionX>3840</fullscreenResolutionX>
-  <fullscreenResolutionY>2160</fullscreenResolutionY>
+  <fullscreenResolutionX>3024</fullscreenResolutionX>
+  <fullscreenResolutionY>1964</fullscreenResolutionY>
   <lastEnteredIP />
   <languageCode>en</languageCode>
   <clientOptions>
