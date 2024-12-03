@@ -1,0 +1,34 @@
+VIM="nvim"
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+export CLI_COLOR=1
+export LSCOLORS=exfxbxdxcxegedabagacad
+export TMUX_CONF=~/.config/tmux/tmux.conf
+
+
+#Aliases
+
+alias ls='ls -G'
+alias la='ls -laG'
+alias ll='ls -lG'
+
+alias vi=$VIM
+alias vim=$VIM
+
+alias work='cd ~/code/januarytech'
+alias gocode='cd ~/code'
+alias rbrew='/usr/local/bin/brew'
+alias web='cd ~/code/januarytech/frontend'
+alias ap='cd ~/code/januarytech/frontend/AgentPortal'
+alias gopy='cd ~/code/januarytech/debtsy'
+alias conf='cd ~/.config'
+alias godbt='cd ~/code/dbt'
+alias logs='cd ~/.local/share/'
+alias venv='source ~/.work_config/.venv/bin/activate'
+alias govenv='cd ~/.work_config/'
+
+alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'
+
+source <(fzf --zsh)
