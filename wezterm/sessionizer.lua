@@ -54,10 +54,10 @@ M.toggle = function(window, pane)
 	)
 
 	local other_paths = {
-		home .. "/code/januarytech/debtsy",
-		home .. "/code/januarytech/frontend/AgentPortal",
-		home .. "/code/januarytech/frontend/BorrowerPortal",
-		home .. "/code/januarytech/frontend/ClientPortal",
+		home .. "/code/january/debtsy",
+		home .. "/code/january/frontend/AgentPortal",
+		home .. "/code/january/frontend/BorrowerPortal",
+		home .. "/code/january/frontend/ClientPortal",
 	}
 	for _, path in ipairs(other_paths) do
 		table.insert(projects, { label = path:gsub("/Users/aaronmikulka", "~"), id = path:gsub(".*/", "") })
