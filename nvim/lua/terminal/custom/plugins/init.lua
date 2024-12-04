@@ -349,7 +349,7 @@ return {
             python = {
               analysis = {
                 extraPaths = {
-                  '/Users/aaronmikulka/code/januarytech/debtsy/.venv/lib/python3.9/site-packages',
+                  '/Users/aaronmikulka/code/january/debtsy/.venv/lib/python3.9/site-packages',
                 },
               },
             },
