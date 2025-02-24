@@ -6,6 +6,8 @@ export CLI_COLOR=1
 export LSCOLORS=exfxbxdxcxegedabagacad
 export TMUX_CONF=~/.config/tmux/tmux.conf
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 
 #Aliases
 
@@ -17,16 +19,12 @@ alias vi=$VIM
 alias vim=$VIM
 
 alias work='cd ~/code/januarytech'
-alias gocode='cd ~/code'
-alias rbrew='/usr/local/bin/brew'
 alias web='cd ~/code/januarytech/frontend'
 alias ap='cd ~/code/januarytech/frontend/AgentPortal'
 alias gopy='cd ~/code/januarytech/debtsy'
 alias conf='cd ~/.config'
 alias godbt='cd ~/code/dbt'
 alias logs='cd ~/.local/share/'
-alias venv='source ~/.work_config/.venv/bin/activate'
-alias govenv='cd ~/.work_config/'
 
 alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'

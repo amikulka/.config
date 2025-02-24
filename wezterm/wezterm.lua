@@ -44,7 +44,6 @@ return {
 		saturation = 0.8,
 		brightness = 0.3,
 	},
-	term = "wezterm",
 
 	disable_default_key_bindings = true,
 	keys = {
@@ -104,6 +103,8 @@ return {
 		{ key = "f", mods = "CTRL", action = wezterm.action_callback(sessionizer.toggle) },
 		{ key = "s", mods = "CTRL", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 		{ key = "d", mods = "LEADER", action = act.ShowDebugOverlay },
+		{ key = "Delete", mods = "NONE", action = wezterm.action({ SendString = "\x7f" }) },
+		-- { key = "Backspace", mods = "NONE", action = wezterm.action({ SendString = "\x7f" }) },
 	},
 
 	key_tables = {

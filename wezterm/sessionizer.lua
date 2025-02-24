@@ -54,13 +54,41 @@ M.toggle = function(window, pane)
 	)
 
 	local other_paths = {
-		home .. "/code/january/debtsy",
+		home .. "/code/january/src",
+		home .. "/code/january/platform",
 		home .. "/code/january/frontend/AgentPortal",
 		home .. "/code/january/frontend/BorrowerPortal",
 		home .. "/code/january/frontend/ClientPortal",
 	}
 	for _, path in ipairs(other_paths) do
 		table.insert(projects, { label = path:gsub("/Users/aaronmikulka", "~"), id = path:gsub(".*/", "") })
+	end
+
+	local subdirs = { "libs/", "apps/", "utils/" }
+	local search_paths = {}
+	for _, sub in ipairs(subdirs) do
+		table.insert(search_paths, home .. "/code/january/src/" .. sub)
+	end
+
+	success, stdout, stderr = wezterm.run_child_process({
+		fd,
+		"--type",
+		"d",
+		"--max-depth=1",
+		".",
+		table.unpack(search_paths),
+	})
+
+	if not success then
+		wezterm.log_error("Failed to run fd: " .. stderr)
+		return
+	end
+
+	for line in stdout:gmatch("([^\n]*)\n?") do
+		line = line:gsub("/Users/aaronmikulka", "~")
+		local label = line
+		local id = line
+		insertUnique(projects, { label = tostring(label), id = tostring(id) })
 	end
 
 	table.sort(projects, function(a, b)
