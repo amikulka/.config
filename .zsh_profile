@@ -8,6 +8,19 @@ export TMUX_CONF=~/.config/tmux/tmux.conf
 
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+makes() {
+        local current_dir=$(pwd)
+
+        cd ~/code/january/
+        make "$@"
+
+        local exit_code=$?
+
+        cd $current_dir
+
+        return $exit_code
+}
+
 
 #Aliases
 
@@ -18,15 +31,16 @@ alias ll='ls -lG'
 alias vi=$VIM
 alias vim=$VIM
 
-alias work='cd ~/code/januarytech'
-alias web='cd ~/code/januarytech/frontend'
-alias ap='cd ~/code/januarytech/frontend/AgentPortal'
-alias gopy='cd ~/code/januarytech/debtsy'
+alias work='cd ~/code/january'
+alias web='cd ~/code/january/frontend'
+alias ap='cd ~/code/january/frontend/AgentPortal'
+alias gopy='cd ~/code/january/debtsy'
 alias conf='cd ~/.config'
 alias godbt='cd ~/code/dbt'
 alias logs='cd ~/.local/share/'
 
 alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'
+
 
 source <(fzf --zsh)

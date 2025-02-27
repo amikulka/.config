@@ -54,6 +54,8 @@ M.toggle = function(window, pane)
 	)
 
 	local other_paths = {
+		home,
+		home .. "/code/january",
 		home .. "/code/january/src",
 		home .. "/code/january/platform",
 		home .. "/code/january/frontend/AgentPortal",
