@@ -350,6 +350,7 @@ return {
               analysis = {
                 extraPaths = {
                   '/Users/aaronmikulka/code/january/src/.venv/lib/python3.9/site-packages',
+                  '/Users/aaronmikulka/code/january/src/devx/.venv/lib/python3.9/site-packages',
                 },
               },
             },
@@ -432,7 +433,7 @@ return {
         formatters = {
           prettier = {
             -- Change where to find the command
-            command = '/Users/aaronmikulka/.nvm/versions/node/v22.3.0/bin/prettier',
+            command = '/opt/homebrew/bin/prettier',
           },
           ruff_format = {
             command = vim.fn.executable 'ruff' and 'ruff' or '/opt/homebrew/bin/ruff',

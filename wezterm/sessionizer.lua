@@ -57,6 +57,7 @@ M.toggle = function(window, pane)
 		home,
 		home .. "/code/january",
 		home .. "/code/january/src",
+		home .. "/code/january/src/devx",
 		home .. "/code/january/platform",
 		home .. "/code/january/frontend/AgentPortal",
 		home .. "/code/january/frontend/BorrowerPortal",
