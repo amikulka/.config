@@ -1,4 +1,4 @@
--- You can add your own plugins here or in other files in this directory!
+-- You can add your own plugins here or in other files in this directory!lsp.lua
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
@@ -419,7 +419,7 @@ return {
         -- Your other configuration settings
         formatters_by_ft = {
           lua = { 'stylua' },
-          python = { 'ruff_format' },
+          python = { 'ruff_format', 'isort' },
           typescript = { 'prettier' },
           javascript = { 'prettier' },
           typescriptreact = { 'prettier' },

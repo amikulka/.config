@@ -83,28 +83,6 @@ alt-e = 'workspace p'
 alt-o = 'workspace o'
 alt-3 = 'workspace 3'
 
-alt-h = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors left'
-alt-j = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors down'
-alt-k = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors up'
-alt-l = 'focus --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors right'
-
-alt-n = 'focus right'
-alt-p = 'focus left'
-
-alt-a = 'focus-monitor 1'
-alt-s = 'focus-monitor 2'
-alt-d = 'focus-monitor 3'
-
-shift-alt-ctrl-n = 'focus-monitor --wrap-around next'
-shift-alt-ctrl-p = 'focus-monitor --wrap-around prev'
-
-alt-shift-n = 'workspace --wrap-around next'
-alt-shift-p = 'workspace --wrap-around prev'
-
-# MODIFY/MOVE WINDOWS
-
-alt-u = 'resize smart +50'
-alt-m = 'resize smart -50'
 
 alt-shift-cmd-ctrl-h = 'move left'
 alt-shift-cmd-ctrl-j = 'move down'
@@ -144,12 +122,6 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 t = 'enable toggle'
 backspace = ['close-all-windows-but-current', 'mode main']
 
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
-
 #CALLBACKS
 
 [[on-window-detected]]
@@ -174,6 +146,10 @@ run = 'move-node-to-workspace c'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace b'
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace b'
 
 [[on-window-detected]]

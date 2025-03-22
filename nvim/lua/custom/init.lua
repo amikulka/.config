@@ -2,9 +2,9 @@
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 
-require 'terminal.custom.options'
-require 'terminal.custom.mappings'
-require 'terminal.custom.auto-commands'
+require 'custom.options'
+require 'custom.mappings'
+require 'custom.auto-commands'
 
 vim.g.autoformat_enabled = true -- Default value, change to false if you want it disabled by default
 
@@ -29,7 +29,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  { import = 'terminal.custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
