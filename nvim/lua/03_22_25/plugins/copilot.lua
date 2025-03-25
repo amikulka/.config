@@ -18,7 +18,12 @@ return {
       }
 
       vim.api.nvim_set_hl(0, 'CopilotSuggestion', { fg = '#c19a6b' })
-      vim.keymap.set('i', '<C-CR>', require('copilot.suggestion').accept, { desc = 'Accept copilot suggestion' })
+      vim.keymap.set('i', '<C-CR>', function()
+        if vim.fn.pumvisible() == 1 then
+          vim.cmd 'call feedkeys("\\<C-e>", "n")'
+        end
+        require('copilot.suggestion').accept()
+      end, { desc = 'Accept copilot suggestion' })
     end,
   },
 }

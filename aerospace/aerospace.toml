@@ -124,6 +124,11 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 #CALLBACKS
 
+
+[[on-window-detected]]
+check-further-callbacks = true
+run = 'layout floating'
+
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace w'
@@ -133,11 +138,11 @@ if.app-id = 'com.linear'
 run = 'move-node-to-workspace w'
 
 [[on-window-detected]]
-check-further-callbacks = true
-run = 'layout floating'
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace t'
 
 [[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace t'
 
 [[on-window-detected]]

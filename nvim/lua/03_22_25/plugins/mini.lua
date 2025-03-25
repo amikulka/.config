@@ -18,7 +18,6 @@ return {
         end
       end
       MiniFiles.setup {
-
         -- Use `''` (empty string) to not create one.
         mappings = {
           go_in_plus = '<Enter>',

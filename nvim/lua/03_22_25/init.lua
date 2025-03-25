@@ -28,11 +28,12 @@ require('lazy').setup {
     -- import your plugins
     { import = '03_22_25.plugins' },
   },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { 'habamax' } },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- checker = { enabled = true },
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons otherwise define a unicode icons table

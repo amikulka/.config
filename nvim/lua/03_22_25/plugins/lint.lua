@@ -49,14 +49,6 @@ return {
       vim.keymap.set('n', '<leader>l', function()
         lint.try_lint()
       end, { desc = 'Trigger linting for current file' })
-      vim.api.nvim_create_autocmd({ 'BufWritePre', 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
-        pattern = '*',
-        callback = function(args)
-          if vim.g.autoformat_enabled then
-            require('conform').format { bufnr = args.buf, timeout = 2000 }
-          end
-        end,
-      })
     end,
   },
 }

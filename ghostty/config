@@ -1,0 +1,6 @@
+theme = github-dark-colorblind
+quick-terminal-position = center
+keybind = super+shift+r=reload_config
+keybind = super+/=new_split:right
+keybind = super+shift+/=new_split:down
+keybind = global:super+shift+ctrl+alt+i=toggle_quick_terminal
