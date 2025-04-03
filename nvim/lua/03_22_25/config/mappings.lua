@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, { desc = 'Format buffer' })
 -- replace word under cursor
 vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace [W]ord' })
 -- Make file executable
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make file executable' })
+-- vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make file executable' })
 
 vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = 'Write buffer' })
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = 'Quit buffer' })

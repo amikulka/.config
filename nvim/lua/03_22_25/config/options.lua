@@ -39,3 +39,6 @@ vim.opt.hlsearch = true -- Set highlight on search, but clear on pressing <Esc> 
 vim.opt.wrap = false -- No wrap text
 vim.opt.expandtab = true -- Spaces for tabs
 vim.opt.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
+
+-- Options for session manager library
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
