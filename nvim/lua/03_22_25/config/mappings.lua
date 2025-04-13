@@ -53,3 +53,5 @@ vim.api.nvim_set_keymap(
   '<cmd>lua vim.g.autoformat_enabled = not vim.g.autoformat_enabled; print("Autoformat is now " .. (vim.g.autoformat_enabled and "enabled" or "disabled"))<CR>',
   { noremap = true, silent = true, desc = '[T]oggle Auto[F]ormat' }
 )
+
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww sessionizer<CR>')

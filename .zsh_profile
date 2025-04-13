@@ -11,7 +11,9 @@ export CLI_COLOR=1
 export LSCOLORS=exfxbxdxcxegedabagacad
 export TMUX_CONF=~/.config/tmux/tmux.conf
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+bindkey -s ^f 'sessionizer\n'
 
 makes() {
         local current_dir=$(pwd)
@@ -68,4 +70,6 @@ _gt_yargs_completions()
 }
 compdef _gt_yargs_completions gt
 ###-end-gt-completions-###
+
+
 
