@@ -18,7 +18,7 @@ return {
       }
 
       vim.api.nvim_set_hl(0, 'CopilotSuggestion', { fg = '#c19a6b' })
-      vim.keymap.set('i', '<c-CR>', function()
+      vim.keymap.set('i', '<c-a>', function()
         if vim.fn.pumvisible() == 1 then
           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-e>', true, true, true), 'i', false)
         end

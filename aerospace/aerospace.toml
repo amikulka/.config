@@ -83,6 +83,11 @@ alt-e = 'workspace p'
 alt-o = 'workspace o'
 alt-3 = 'workspace 3'
 
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
 
 alt-shift-cmd-ctrl-h = 'move left'
 alt-shift-cmd-ctrl-j = 'move down'
@@ -136,7 +141,6 @@ run = 'move-node-to-workspace w'
 [[on-window-detected]]
 if.app-id = 'com.linear'
 run = 'move-node-to-workspace w'
-
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace t'

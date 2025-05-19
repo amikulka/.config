@@ -54,4 +54,7 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = '[T]oggle Auto[F]ormat' }
 )
 
-vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww sessionizer<CR>')
+vim.keymap.set('n', '<C-f>', function()
+  local fterm = require 'FTerm'
+  fterm.run 'sesh-sessions && exit'
+end)

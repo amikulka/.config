@@ -1,0 +1,35 @@
+blacklist = ["node_modules", "devx", "sources", "tools"]
+
+[[session]]
+name = "January"
+path = "~/code/january"
+
+[[session]]
+name = "src"
+path = "~/code/january/src"
+
+[[session]]
+name = "debtsy"
+path = "~/code/january/src/apps/debtsy"
+startup_command = "ls"
+
+[[session]]
+name = "ap"
+path = "~/code/january/frontend/AgentPortal"
+startup_command = "ls"
+
+[[session]]
+name = "tmux config"
+path = "~/.config/tmux"
+startup_command = "nvim .tmux.conf"
+preview_command = "bat --color=always ~/.config/tmux/.tmux.conf"
+
+[[session]]
+name = "nvim Config"
+path = "~/.config/nvim/lua/03_22_25"
+startup_command = "nvim ."
+
+[[session]]
+name = "config"
+path = "~/.config"
+startup_command = "nvim ."
