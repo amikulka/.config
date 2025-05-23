@@ -14,7 +14,7 @@ path = "~/code/january/src/apps/debtsy"
 startup_command = "ls"
 
 [[session]]
-name = "ap"
+name = "agent portal"
 path = "~/code/january/frontend/AgentPortal"
 startup_command = "ls"
 
@@ -33,3 +33,13 @@ startup_command = "nvim ."
 name = "config"
 path = "~/.config"
 startup_command = "nvim ."
+
+[[session]]
+name = "home"
+path = "~/"
+
+[[session]]
+name = "scripts"
+path = "~/.local/bin"
+startup_command = "nvim ."
+
