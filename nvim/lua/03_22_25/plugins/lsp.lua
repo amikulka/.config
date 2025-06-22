@@ -52,19 +52,19 @@ return {
     opts = {
       keymap = { preset = 'super-tab' },
       appearance = {
-        nerd_font_variant = 'mono'
+        nerd_font_variant = 'mono',
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' }
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
       },
       completion = {
-        documentation = { auto_show = true }
+        documentation = { auto_show = true },
       },
       fuzzy = {
-        implementation = 'prefer_rust_with_warning'
-      }
+        implementation = 'prefer_rust_with_warning',
+      },
     },
-    opts_extend = { "sources.default" },
+    opts_extend = { 'sources.default' },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -110,7 +110,7 @@ return {
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ctinn')
+          map('<leader>ce', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
@@ -176,10 +176,10 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         -- Formatters
-        'stylua',     -- Lua formatter
-        'prettier',   -- JS/TS/JSON/YAML/Markdown formatter
-        'ruff',       -- Python formatter and linter
-        'isort',      -- Python import sorter
+        'stylua', -- Lua formatter
+        'prettier', -- JS/TS/JSON/YAML/Markdown formatter
+        'ruff', -- Python formatter and linter
+        'isort', -- Python import sorter
         -- Linters
         'markdownlint', -- Markdown linter
       })

@@ -8,6 +8,15 @@ return {
     },
     config = function()
       require('codecompanion').setup {
+        adapters = {
+          anthropic = function()
+            return require('codecompanion.adapters').extend('anthropic', {
+              env = {
+                api_key = 'cmd: gpg --batch --quiet --decrypt ~/.config/keys/anthropic_key.gpg',
+              },
+            })
+          end,
+        },
         strategies = {
           chat = {
             adapter = 'anthropic',
@@ -18,6 +27,9 @@ return {
             model = 'claude-sonnet-4-20250514',
           },
         },
+        opts = {
+          log_level = 'ERROR',
+        },
         extensions = {
           vectorcode = {
             opts = {
@@ -27,9 +39,9 @@ return {
         },
       }
 
-      vim.keymap.set('n', '<leader>cc', '<cmd>CodeCompanionChat<cr>', { desc = '[C]ode [C]ompanion Chat' })
-      vim.keymap.set('n', '<leader>ci', '<cmd>CodeCompanionInline<cr>', { desc = '[C]ode [C]ompanion Inline' })
-      vim.keymap.set('n', '<leader>ca', '<cmd>CodeCompanionActions<cr>', { desc = '[C]ode [C]ompanion Actions' })
+      vim.keymap.set('n', '<leader>cc', '<cmd>CodeCompanionChat<cr>', { desc = 'Code [C]ompanion [C]hat' })
+      vim.keymap.set('n', '<leader>ci', '<cmd>CodeCompanion<cr>', { desc = 'Code [C]ompanion [I]nline' })
+      vim.keymap.set('n', '<leader>ca', '<cmd>CodeCompanionActions<cr>', { desc = 'Code [C]ompanion [A]ctions' })
     end,
   },
   {
