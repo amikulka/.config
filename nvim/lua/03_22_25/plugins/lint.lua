@@ -1,8 +1,15 @@
-return {
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ NVIM-LINT: Asynchronous linting for multiple languages  │
+-- │ KEY BINDINGS:                                           │
+-- │   • <leader>l - Manual lint trigger                     │
+-- │ AUTO-LINT: On save, insert leave, and buffer enter     │
+-- │ DEPENDENCIES: ruff, markdownlint (auto-installed)      │
+-- ╰─────────────────────────────────────────────────────────╯
 
-  { -- Linting
+return {
+  {
     'mfussenegger/nvim-lint',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPost', 'BufNewFile', 'BufWritePost' },
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {

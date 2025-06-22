@@ -1,3 +1,13 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ MINI.NVIM: Swiss army knife of Neovim plugins          │
+-- │ KEY BINDINGS:                                           │
+-- │   • <leader>/  - Comment line/visual selection          │
+-- │   • gc         - Comment operator (e.g., gcc, gcap)     │
+-- │   • <leader>f  - File explorer toggle                   │
+-- │ FEATURES: Context-aware comments (JSX/TSX support)     │
+-- │ MODULES: comment, surround, ai text objects, files     │
+-- ╰─────────────────────────────────────────────────────────╯
+
 return {
   {
     'echasnovski/mini.nvim',
@@ -9,6 +19,11 @@ return {
           comment_line = '<leader>/',
           comment_visual = '<leader>/',
           textobject = 'gc',
+        },
+        options = {
+          custom_commentstring = function()
+            return require('ts_context_commentstring').calculate_commentstring() or vim.bo.commentstring
+          end,
         },
       }
       require('mini.ai').setup {
@@ -61,6 +76,13 @@ return {
       }
       vim.keymap.set('n', '<leader>f', minifiles_toggle, { desc = 'Open [F]ile Explorer' })
       vim.keymap.set('n', '<leader>f', minifiles_toggle, { desc = 'Open [F]ile Explorer' })
+
+      require('mini.diff').setup {
+        view = {
+          style = 'sign',
+          signs = { add = '+', change = '|', delete = '-' },
+        },
+      }
     end,
   },
   {

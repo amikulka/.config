@@ -1,5 +1,13 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ TREESITTER: Syntax highlighting and code analysis      │
+-- │ LANGUAGES: JS/TS parsers handle JSX/TSX automatically  │
+-- │ FEATURES: Highlighting, indentation, text objects       │
+-- │ REACT SUPPORT: Fixed indentation, proper JSX parsing   │
+-- │ PERFORMANCE: Auto-install parsers, optimized config    │
+-- ╰─────────────────────────────────────────────────────────╯
+
 return {
-  { -- Highlight, edit, and navigate code
+  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
@@ -10,26 +18,28 @@ return {
         'css',
         'go',
         'html',
-        'javascript',
+        'javascript',  -- Handles JSX files
         'json',
         'lua',
         'make',
         'markdown',
         'python',
         'rust',
-        'typescript',
+        'typescript', -- Handles TSX files
         'yaml',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
         enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby', 'typescript' },
+        -- Some languages depend on vim's regex highlighting system for indent rules.
+        -- Modern treesitter handles TypeScript well, only keep problematic ones
+        additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby', 'typescript' } },
+      indent = { 
+        enable = true, 
+        disable = { 'ruby' } -- Removed typescript - modern treesitter handles it well
+      },
       text_objects = {
         select = {
           enable = true,

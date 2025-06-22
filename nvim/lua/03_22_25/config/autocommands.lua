@@ -1,5 +1,9 @@
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ AUTOCOMMANDS: Automatic behaviors and event handlers   │
+-- │ FEATURES: Yank highlighting, auto-format, auto-lint    │
+-- │ PERFORMANCE: Optimized timing and conflict avoidance   │
+-- │ TOGGLES: Respects user preferences and manual overrides│
+-- ╰─────────────────────────────────────────────────────────╯
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -12,17 +16,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Auto-format on save (respects toggle)
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function(args)
     if vim.g.autoformat_enabled then
-      require('conform').format { bufnr = args.buf, timeout = 2000 }
+      require('conform').format { bufnr = args.buf, timeout_ms = 2000, lsp_format = 'fallback' }
     end
   end,
 })
 
-vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave' }, {
+-- Auto-lint on save and insert leave
+vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave', 'BufEnter' }, {
   callback = function()
-    require('lint').try_lint()
+    -- Delay linting slightly to avoid conflicts with formatting
+    vim.defer_fn(function()
+      require('lint').try_lint()
+    end, 100)
   end,
 })

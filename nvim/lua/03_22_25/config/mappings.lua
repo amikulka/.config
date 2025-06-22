@@ -1,3 +1,10 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ KEY MAPPINGS: Custom keybinds and workflow shortcuts   │
+-- │ PHILOSOPHY: Leader-based, mnemonic, conflict-free      │
+-- │ FEATURES: Smart navigation, clipboard, formatting      │
+-- │ INTEGRATIONS: LSP, session management, terminal        │
+-- ╰─────────────────────────────────────────────────────────╯
+
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = '[P]roject [V]iew' })
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv") -- move highlighted line(s) down
@@ -32,10 +39,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to system clip
 vim.keymap.set({ 'n', 'v' }, '<M-c>', [["+y]], { desc = 'Copy to system clipboard' })
 vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank to system clipboard' })
 
--- TODO: Move to copilot file
--- vim.keymap.set('n', '<leader>tc', function()
---   require('copilot.suggestion').toggle_auto_trigger()
--- end, { desc = 'Toggle [C]opilot' })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear search highlights with <Esc>
 
@@ -44,8 +47,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 
--- TODO: Do I want this?
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 vim.api.nvim_set_keymap(
   'n',
@@ -54,7 +55,22 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = '[T]oggle Auto[F]ormat' }
 )
 
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>tai',
+  '<cmd>lua vim.g.isort_enabled = not vim.g.isort_enabled; print("Isort is now " .. (vim.g.isort_enabled and "enabled" or "disabled"))<CR>',
+  { noremap = true, silent = true, desc = '[T]oggle [A]uto [I]sort' }
+)
+
+-- Session management with sesh integration
 vim.keymap.set('n', '<C-f>', function()
   local fterm = require 'FTerm'
-  fterm.run 'sesh-sessions && exit'
-end)
+  -- Use sesh with fzf for smart session management
+  fterm.run([[
+    session=$(sesh list | fzf --prompt="Session: " --height=40% --reverse --border)
+    if [ -n "$session" ]; then
+      sesh connect "$session"
+    fi
+    exit
+  ]])
+end, { desc = 'Open session manager' })

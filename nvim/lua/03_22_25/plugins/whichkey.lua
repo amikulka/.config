@@ -9,6 +9,9 @@ return {
       -- Document existing key chains
       { '<leader>c', group = '[C]ode' },
       { '<leader>c_', hidden = true },
+      { '<leader>cc', desc = '[C]ode [C]ompanion Chat' },
+      { '<leader>ci', desc = '[C]ode [C]ompanion Inline' },
+      { '<leader>ca', desc = '[C]ode [C]ompanion Actions' },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>d_', hidden = true },
       { '<leader>p', group = '[P]roject' },
@@ -19,6 +22,8 @@ return {
       { '<leader>t_', hidden = true },
       { '<leader>ta', group = '[T]oggle [A]uto' },
       { '<leader>ta_', hidden = true },
+      { '<leader>taf', desc = '[T]oggle [A]uto [F]ormat' },
+      { '<leader>tai', desc = '[T]oggle [A]uto [I]sort' },
       { '<leader>s', group = '[S]earch' },
       { '<leader>s_', hidden = true },
       { '<leader>sw', group = '[S]earch [W]orkspace' },

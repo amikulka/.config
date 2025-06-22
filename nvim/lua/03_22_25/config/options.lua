@@ -1,9 +1,17 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ NEOVIM OPTIONS: Core settings and behavior             │
+-- │ LEADER KEYS: Space (leader), Backslash (local leader)  │
+-- │ FEATURES: Relative numbers, smart search, undo files   │
+-- │ TOGGLES: autoformat_enabled, isort_enabled             │
+-- │ PERFORMANCE: Optimized timeouts and update frequencies │
+-- ╰─────────────────────────────────────────────────────────╯
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 vim.g.have_nerd_font = true -- Set to true if you have a Nerd Font installed
-
 vim.g.autoformat_enabled = true
+vim.g.isort_enabled = true -- Toggle isort for Python files
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -33,7 +41,7 @@ vim.opt.splitbelow = true -- Configure how new horizontal splits should be opene
 
 vim.opt.inccommand = 'split' -- Preview substitutions live, as you type!
 vim.opt.cursorline = true -- Show which line your cursor is on
-vim.opt.scrolloff = 20 -- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.fileencoding = 'utf-8'
 vim.opt.hlsearch = true -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.wrap = false -- No wrap text

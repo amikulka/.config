@@ -1,17 +1,12 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ GIT INTEGRATION: Signs, blame, and LazyGit terminal UI  │
+-- │ KEY BINDINGS:                                           │
+-- │   • <leader>gg - Open LazyGit                          │
+-- │   • <leader>gf - LazyGit for current file              │
+-- │ FEATURES: Gutter signs, current line blame             │
+-- ╰─────────────────────────────────────────────────────────╯
+
 return {
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-      current_line_blame = true,
-    },
-  },
   {
     'kdheepak/lazygit.nvim',
     cmd = {

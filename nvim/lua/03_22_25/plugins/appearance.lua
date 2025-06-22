@@ -1,12 +1,21 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ APPEARANCE: Theme, colorizer, and visual enhancements   │
+-- │ THEME: Catppuccin with custom color overrides          │
+-- │ FEATURES: Color preview, twilight mode, indent guides  │
+-- │ PERFORMANCE: Optimized loading and minimal overhead    │
+-- ╰─────────────────────────────────────────────────────────╯
+
 return {
   {
     'norcalli/nvim-colorizer.lua',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       require('colorizer').setup()
     end,
   },
   {
     'folke/twilight.nvim',
+    cmd = { 'Twilight', 'TwilightEnable', 'TwilightDisable' },
     config = function()
       require('twilight').setup {}
     end,
@@ -14,12 +23,18 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
+    lazy = false,
     opts = {
       integrations = {
-        neotree = true,
-        aerial = true,
+        blink_cmp = true,
+        gitsigns = true,
         harpoon = true,
+        indent_blankline = { enabled = true },
+        lsp_trouble = true,
         mason = true,
+        mini = { enabled = true },
+        telescope = { enabled = true },
+        treesitter = true,
         which_key = true,
       },
       dim_inactive = {
@@ -71,6 +86,11 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    opts = {},
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
+      require('ibl').setup({
+        -- Loads after reading file content and for new files
+      })
+    end,
   },
 }

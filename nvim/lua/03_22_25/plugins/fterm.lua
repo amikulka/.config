@@ -1,5 +1,14 @@
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ FLOATING TERMINAL: Quick terminal access and sessions  │
+-- │ KEY BINDINGS:                                           │
+-- │   • <Alt-i> - Toggle terminal (normal + terminal mode)  │
+-- │   • <Alt-x> - Close terminal session                   │
+-- │   • <C-f>   - Session manager (sesh integration)       │
+-- ╰─────────────────────────────────────────────────────────╯
+
 return {
   'numToStr/FTerm.nvim',
+  cmd = { 'FTermToggle', 'FTermOpen', 'FTermClose' },
   config = function()
     local fterm = require 'FTerm'
     fterm.setup {}

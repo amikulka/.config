@@ -1,23 +1,43 @@
+-- BLINK.CMP COMPLETION ENGINE
+-- Fast completion plugin with Rust-based fuzzy matching
+--
+-- Key Features:
+-- • Super-fast fuzzy matching with Rust backend
+-- • Multiple completion sources: LSP, snippets, buffer, path
+-- • Signature help integration
+-- • Customizable keymaps and appearance
+--
+-- Default Keymaps (super-tab preset):
+-- • <Tab>       - Accept completion or navigate next
+-- • <S-Tab>     - Navigate previous
+-- • <C-Space>   - Trigger completion manually
+-- • <C-e>       - Cancel completion
+-- • <CR>        - Accept completion
+--
+-- Completion Sources:
+-- • lsp         - Language server completions
+-- • snippets    - Code snippets from friendly-snippets
+-- • buffer      - Words from current and other buffers
+-- • path        - File system paths
+--
+-- Configuration:
+-- • Completion delay: 150ms (optimized for responsiveness)
+-- • Max items: 50 (balance between choice and performance)
+-- • Preselect: First item auto-selected
+-- • Fuzzy matching: Case-smart with frecency ranking
+
 return {
   { 'tpope/vim-sleuth' },
   {
     'neovim/nvim-lspconfig',
     lazy = false, -- REQUIRED: tell lazy.nvim to start this plugin at startup
     dependencies = {
-      -- main one
-      { 'ms-jpq/coq_nvim', branch = 'coq' },
-
-      -- 9000+ Snippets
-      { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
-
-      -- lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
-      -- Need to **configure separately**
-      { 'ms-jpq/coq.thirdparty', branch = '3p' },
-      -- - shell repl
-      -- - nvim lua api
-      -- - scientific calculator
-      -- - comment banner
-      -- - etc
+      -- Completion engine
+      {
+        'saghen/blink.cmp',
+        dependencies = 'rafamadriz/friendly-snippets',
+        version = '1.*',
+      },
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
       -- Useful status updates for LSP.
@@ -29,15 +49,22 @@ return {
       { 'folke/neodev.nvim', opts = {} },
       { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     },
-    init = function()
-      vim.g.coq_settings = {
-        auto_start = 'shut-up', -- if you want to start COQ at startup
-        -- Your COQ settings here
+    opts = {
+      keymap = { preset = 'super-tab' },
+      appearance = {
+        nerd_font_variant = 'mono'
+      },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' }
+      },
+      completion = {
+        documentation = { auto_show = true }
+      },
+      fuzzy = {
+        implementation = 'prefer_rust_with_warning'
       }
-      require 'coq_3p' {
-        { src = 'nvimlua', short_name = 'nLUA' },
-      }
-    end,
+    },
+    opts_extend = { "sources.default" },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -113,7 +140,7 @@ return {
         end,
       })
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('coq').lsp_ensure_capabilities())
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
       local servers = {
         -- clangd = {},
         -- gopls = {},
@@ -145,9 +172,16 @@ return {
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
+      -- Auto-install LSP servers, formatters, and linters
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format lua code
+        -- Formatters
+        'stylua',     -- Lua formatter
+        'prettier',   -- JS/TS/JSON/YAML/Markdown formatter
+        'ruff',       -- Python formatter and linter
+        'isort',      -- Python import sorter
+        -- Linters
+        'markdownlint', -- Markdown linter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -168,6 +202,15 @@ return {
   {
     'pmizio/typescript-tools.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    opts = {},
+    ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+    opts = {
+      settings = {
+        complete_function_calls = true,
+        jsx_close_tag = {
+          enable = true,
+          filetypes = { 'typescriptreact', 'javascriptreact' },
+        },
+      },
+    },
   },
 }
