@@ -63,6 +63,7 @@ alias logs='cd ~/.local/share/'
 
 alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias chroma=''
 
 eval "$(zoxide init zsh)"
 

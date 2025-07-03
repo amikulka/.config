@@ -81,6 +81,13 @@ return {
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
+
+      -- Enhanced blink.cmp contrast highlights
+      vim.cmd.hi 'BlinkCmpMenuSelection guibg=#3e4255 gui=bold'
+      vim.cmd.hi 'BlinkCmpMenuBorder guifg=#3e4255'
+      vim.cmd.hi 'BlinkCmpLabelMatch guifg=#fcf75e gui=bold'
+      vim.cmd.hi 'BlinkCmpLabel guifg=#c5d1f1'
+      vim.cmd.hi 'BlinkCmpMenu guibg=#141620'
     end,
   },
   {
@@ -88,9 +95,9 @@ return {
     main = 'ibl',
     event = { 'BufReadPost', 'BufNewFile' },
     config = function()
-      require('ibl').setup({
+      require('ibl').setup {
         -- Loads after reading file content and for new files
-      })
+      }
     end,
   },
 }

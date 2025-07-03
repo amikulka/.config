@@ -1,6 +1,6 @@
 -- BLINK.CMP COMPLETION ENGINE
 -- Fast completion plugin with Rust-based fuzzy matching
---
+
 -- Key Features:
 -- • Super-fast fuzzy matching with Rust backend
 -- • Multiple completion sources: LSP, snippets, buffer, path
@@ -29,42 +29,94 @@
 return {
   { 'tpope/vim-sleuth' },
   {
-    'neovim/nvim-lspconfig',
-    lazy = false, -- REQUIRED: tell lazy.nvim to start this plugin at startup
-    dependencies = {
-      -- Completion engine
-      {
-        'saghen/blink.cmp',
-        dependencies = 'rafamadriz/friendly-snippets',
-        version = '1.*',
-      },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
-      -- Useful status updates for LSP.
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
-
-      -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-      -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
-      { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
-    },
+    'folke/lazydev.nvim',
+    ft = 'lua', -- only load on lua files
     opts = {
-      keymap = { preset = 'super-tab' },
+      library = {
+        -- See the configuration section for more details
+        -- Load luvit types when the `vim.uv` word is found
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+      },
+    },
+  },
+  {
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets', 'fang2hou/blink-copilot' },
+    version = '1.*',
+    opts = {
+      keymap = {
+        preset = 'default',
+        ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+        ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+        ['<C-j>'] = { 'select_next', 'fallback' },
+        ['<C-k>'] = { 'select_prev', 'fallback' },
+        ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+        ['<C-e>'] = { 'cancel', 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' },
+      },
       appearance = {
         nerd_font_variant = 'mono',
       },
-      sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
-      },
       completion = {
-        documentation = { auto_show = true },
+        documentation = {
+          auto_show = true,
+          window = {
+            border = 'rounded',
+            winblend = 0,
+            scrollbar = true,
+          },
+        },
+        menu = {
+          enabled = true,
+          min_width = 15,
+          max_height = 10,
+          border = 'rounded',
+          winblend = 0,
+          scrollbar = true,
+        },
+      },
+      signature = {
+        window = {
+          border = 'rounded',
+        },
+      },
+      sources = {
+        -- add lazydev to your completion providers
+        default = { 'copilot', 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+        providers = {
+          lazydev = {
+            name = 'LazyDev',
+            module = 'lazydev.integrations.blink',
+            -- make lazydev completions top priority (see `:h blink.cmp`)
+            score_offset = 99,
+          },
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+          },
+        },
       },
       fuzzy = {
         implementation = 'prefer_rust_with_warning',
       },
     },
     opts_extend = { 'sources.default' },
+  },
+  {
+    'neovim/nvim-lspconfig',
+    lazy = false, -- REQUIRED: tell lazy.nvim to start this plugin at startup
+    dependencies = {
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
+      -- Useful status updates for LSP.
+      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      { 'j-hui/fidget.nvim', opts = {} },
+
+      -- NOTE: neodev.nvim is replaced by lazydev.nvim (configured above)
+      { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
+    },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -142,15 +194,11 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
         pyright = {
           settings = {
             python = {
               analysis = {
-                extraPaths = {
-                  '/Users/aaronmikulka/code/january/src/.venv/lib/python3.9/site-packages',
-                },
+                extraPaths = { '/Users/aaronmikulka/code/january/src/.venv/lib/python3.9/site-packages/' },
               },
             },
           },

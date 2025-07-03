@@ -20,7 +20,7 @@ vim.keymap.set('n', 'N', 'Nzzzv') -- move to previous search result and center i
 -- greatest remap ever
 vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without overwriting clipboard' })
 
-vim.keymap.set('i', '<C-c>', '<Esc>') -- exit insert mode with <C-c>
+-- Note: C-c mapping removed to avoid conflicts with avante.nvim dismiss suggestion
 
 vim.keymap.set('n', 'Q', '<nop>') -- disable Ex mode
 vim.keymap.set('n', '<leader>=', vim.lsp.buf.format, { desc = 'Format buffer' })

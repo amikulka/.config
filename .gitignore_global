@@ -1,2 +1,4 @@
 **/.vectorcode/
-**/.claude/settings.local.json
+**/.claude/
+**/chroma-data/
+

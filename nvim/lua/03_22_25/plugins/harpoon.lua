@@ -27,13 +27,6 @@ return {
       harpoon:list():select(4)
     end)
 
-    -- Toggle previous & next buffers stored within Harpoon list
-    -- uses alt p and alt n to avoid conflicts with other plugins
-    vim.keymap.set('n', '<C-n>', function()
-      harpoon:list():prev()
-    end)
-    vim.keymap.set('n', '<C-p>', function()
-      harpoon:list():next()
-    end)
+    -- Note: C-n and C-p removed to avoid conflicts with avante.nvim suggestions
   end,
 }

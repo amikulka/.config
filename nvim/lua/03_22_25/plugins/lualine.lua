@@ -187,13 +187,13 @@ return {
       padding = { right = 0 },
     }
     
-    ins_right {
-      function()
-        local component = require('03_22_25.components.code_companion_lualine'):new()
-        return component:update_status()
-      end,
-      color = { fg = colors.cyan },
-    }
+    -- ins_right {
+    --   function()
+    --     local component = require('03_22_25.components.code_companion_lualine'):new()
+    --     return component:update_status()
+    --   end,
+    --   color = { fg = colors.cyan },
+    -- }
     ins_right {
       -- Lsp server name .
       function()
