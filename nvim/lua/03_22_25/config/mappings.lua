@@ -39,14 +39,12 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to system clip
 vim.keymap.set({ 'n', 'v' }, '<M-c>', [["+y]], { desc = 'Copy to system clipboard' })
 vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank to system clipboard' })
 
-
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear search highlights with <Esc>
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-
 
 vim.api.nvim_set_keymap(
   'n',
@@ -61,16 +59,3 @@ vim.api.nvim_set_keymap(
   '<cmd>lua vim.g.isort_enabled = not vim.g.isort_enabled; print("Isort is now " .. (vim.g.isort_enabled and "enabled" or "disabled"))<CR>',
   { noremap = true, silent = true, desc = '[T]oggle [A]uto [I]sort' }
 )
-
--- Session management with sesh integration
-vim.keymap.set('n', '<C-f>', function()
-  local fterm = require 'FTerm'
-  -- Use sesh with fzf for smart session management
-  fterm.run([[
-    session=$(sesh list | fzf --prompt="Session: " --height=40% --reverse --border)
-    if [ -n "$session" ]; then
-      sesh connect "$session"
-    fi
-    exit
-  ]])
-end, { desc = 'Open session manager' })

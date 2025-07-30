@@ -198,7 +198,7 @@ return {
           settings = {
             python = {
               analysis = {
-                extraPaths = { '/Users/aaronmikulka/code/january/src/.venv/lib/python3.9/site-packages/' },
+                extraPaths = { '/Users/aaronmikulka/code/january/src/.venv' },
               },
             },
           },

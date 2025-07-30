@@ -83,10 +83,10 @@ alt-e = 'workspace p'
 alt-o = 'workspace o'
 alt-3 = 'workspace 3'
 
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+ctrl-shift-alt-h = 'focus left'
+ctrl-shift-alt-j = 'focus down'
+ctrl-shift-alt-k = 'focus up'
+ctrl-shift-alt-l = 'focus right'
 
 
 alt-shift-cmd-ctrl-h = 'move left'

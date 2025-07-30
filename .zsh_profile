@@ -11,24 +11,6 @@ export CLI_COLOR=1
 export LSCOLORS=exfxbxdxcxegedabagacad
 export TMUX_CONF=~/.config/tmux/tmux.conf
 
-# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-function sesh-sessions() {
-  {
-    exec </dev/tty
-    exec <&1
-    local session
-    session=$(sesh list -t -c | sesh list -i | gum filter --limit 1 --no-sort --no-strip-ansi --fuzzy --placeholder 'Pick a sesh' --height 50 --prompt='⚡')
-    zle reset-prompt > /dev/null 2>&1 || true
-    [[ -z "$session" ]] && return
-    sesh connect $session
-  }
-}
-
-zle     -N             sesh-sessions
-bindkey -M emacs '^f' sesh-sessions
-bindkey -M vicmd '^f' sesh-sessions
-bindkey -M viins '^f' sesh-sessions
 
 makes() {
         local current_dir=$(pwd)
@@ -43,6 +25,7 @@ makes() {
         return $exit_code
 }
 
+bindkey -s '^F' 'zellij\n'
 
 #Aliases
 
