@@ -32,10 +32,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 [workspace-to-monitor-force-assignment]
-w = 1
+w = ['secondary', 1]
 p = 1
-b = ['secondary', 1]
-t = ['secondary', 2, 1]
+b = 1
+t = 1
 c = ['secondary', 2, 1]
 o = ['secondary', 2, 1]
 3 = 3

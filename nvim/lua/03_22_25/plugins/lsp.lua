@@ -41,7 +41,7 @@ return {
   },
   {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets', 'fang2hou/blink-copilot' },
+    dependencies = { 'rafamadriz/friendly-snippets' },
     version = '1.*',
     opts = {
       keymap = {
@@ -82,19 +82,13 @@ return {
       },
       sources = {
         -- add lazydev to your completion providers
-        default = { 'copilot', 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             -- make lazydev completions top priority (see `:h blink.cmp`)
             score_offset = 99,
-          },
-          copilot = {
-            name = 'copilot',
-            module = 'blink-copilot',
-            score_offset = 100,
-            async = true,
           },
         },
       },
@@ -198,10 +192,26 @@ return {
           settings = {
             python = {
               analysis = {
-                extraPaths = { '/Users/aaronmikulka/code/january/src/.venv' },
+                extraPaths = {
+                  '/Users/aaronmikulka/code/january/src/.venv/lib/python3.9/site-packages',
+                  '/Users/aaronmikulka/code/january/src',
+                  '/Users/aaronmikulka/code/january/src/apps',
+                  '/Users/aaronmikulka/code/january/src/libs',
+                  '/Users/aaronmikulka/code/january/src/utils',
+                  '/Users/aaronmikulka/code/january/src/domains',
+                  '/Users/aaronmikulka/code/january/src/models',
+                },
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                autoImportCompletions = true,
+                diagnosticMode = 'workspace',
               },
             },
           },
+          root_dir = function(fname)
+            local util = require 'lspconfig.util'
+            return util.root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git')(fname) or util.path.dirname(fname)
+          end,
         },
         lua_ls = {
           settings = {

@@ -1,23 +1,23 @@
 return {
-  {
-    'zbirenbaum/copilot.lua',
-    event = 'InsertEnter',
-    cmd = 'Copilot',
-    config = function()
-      local copilot = require 'copilot'
-      local suggestion = require 'copilot.suggestion'
-
-      copilot.setup {
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-        filetypes = {
-          markdown = true,
-          help = true,
-        },
-        copilot_model = 'gpt-4.1-copilot',
-      }
-    end,
-  },
+  -- {
+  --   'zbirenbaum/copilot.lua',
+  --   event = 'InsertEnter',
+  --   cmd = 'Copilot',
+  --   config = function()
+  --     local copilot = require 'copilot'
+  --     local suggestion = require 'copilot.suggestion'
+  --
+  --     copilot.setup {
+  --       suggestion = { enabled = false },
+  --       panel = { enabled = false },
+  --       filetypes = {
+  --         markdown = true,
+  --         help = true,
+  --       },
+  --       copilot_model = 'gpt-4.1-copilot',
+  --     }
+  --   end,
+  -- },
 }
 -- require("copilot.suggestion").is_visible()
 -- require("copilot.suggestion").accept(modifier)

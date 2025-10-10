@@ -1,4 +1,4 @@
-theme = github-dark-colorblind
+theme = Github Dark Colorblind
 quick-terminal-position = center
 keybind = super+shift+r=reload_config
 keybind = super+/=new_split:right
