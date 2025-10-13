@@ -83,10 +83,10 @@ alt-e = 'workspace p'
 alt-o = 'workspace o'
 alt-3 = 'workspace 3'
 
-ctrl-shift-alt-h = 'focus left'
-ctrl-shift-alt-j = 'focus down'
-ctrl-shift-alt-k = 'focus up'
-ctrl-shift-alt-l = 'focus right'
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
 
 
 alt-shift-cmd-ctrl-h = 'move left'
@@ -104,7 +104,6 @@ alt-shift-ctrl-cmd-b = 'move-node-to-workspace b'
 alt-shift-ctrl-cmd-e = 'move-node-to-workspace p'
 alt-shift-ctrl-cmd-o = 'move-node-to-workspace o'
 alt-shift-ctrl-cmd-3 = 'move-node-to-workspace 3'
-
 alt-shift-ctrl-cmd-n = [
     'move-node-to-workspace --wrap-around next',
     'workspace --wrap-around next',
@@ -130,9 +129,9 @@ backspace = ['close-all-windows-but-current', 'mode main']
 #CALLBACKS
 
 
-[[on-window-detected]]
-check-further-callbacks = true
-run = 'layout floating'
+# [[on-window-detected]]
+# check-further-callbacks = true
+# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'

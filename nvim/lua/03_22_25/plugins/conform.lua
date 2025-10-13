@@ -14,14 +14,7 @@ return {
     require('conform').setup {
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = function()
-          local formatters = {}
-          if vim.g.isort_enabled then
-            table.insert(formatters, 'isort')
-          end
-          table.insert(formatters, 'ruff_format')
-          return formatters
-        end,
+        python = { 'ruff_format' },
         typescript = { 'prettier' },
         javascript = { 'prettier' },
         typescriptreact = { 'prettier' },
@@ -31,33 +24,42 @@ return {
         yaml = { 'prettier' },
         markdown = { 'prettier' },
       },
-      formatters = {
-        prettier = {
-          command = vim.fn.executable('prettier') and 'prettier' or vim.fn.stdpath('data') .. '/mason/bin/prettier',
-          condition = function()
-            return vim.fn.executable('prettier') == 1 or vim.fn.executable(vim.fn.stdpath('data') .. '/mason/bin/prettier') == 1
-          end,
-        },
-        ruff_format = {
-          command = vim.fn.executable('ruff') and 'ruff' or vim.fn.stdpath('data') .. '/mason/bin/ruff',
-          args = { 'format', '--quiet', '-' },
-          condition = function()
-            return vim.fn.executable('ruff') == 1 or vim.fn.executable(vim.fn.stdpath('data') .. '/mason/bin/ruff') == 1
-          end,
-        },
-        isort = {
-          command = vim.fn.executable('isort') and 'isort' or vim.fn.stdpath('data') .. '/mason/bin/isort',
-          condition = function()
-            return vim.fn.executable('isort') == 1 or vim.fn.executable(vim.fn.stdpath('data') .. '/mason/bin/isort') == 1
-          end,
-        },
-        stylua = {
-          command = vim.fn.executable('stylua') and 'stylua' or vim.fn.stdpath('data') .. '/mason/bin/stylua',
-          condition = function()
-            return vim.fn.executable('stylua') == 1 or vim.fn.executable(vim.fn.stdpath('data') .. '/mason/bin/stylua') == 1
-          end,
-        },
-      },
+      format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+        return { timeout_ms = 500, lsp_format = 'fallback' }
+      end,
     }
+    vim.api.nvim_create_user_command('FormatDisable', function(args)
+      if args.bang then
+        -- FormatDisable! will disable formatting just for this buffer
+        vim.b.disable_autoformat = true
+      else
+        vim.g.disable_autoformat = true
+      end
+    end, {
+      desc = 'Disable autoformat-on-save',
+      bang = true,
+    })
+    vim.api.nvim_create_user_command('FormatEnable', function()
+      vim.b.disable_autoformat = false
+      vim.g.disable_autoformat = false
+    end, {
+      desc = 'Re-enable autoformat-on-save',
+    })
+
+    -- Keymap to toggle autoformat
+    vim.keymap.set('n', '<leader>taf', function()
+      if vim.g.disable_autoformat or vim.b.disable_autoformat then
+        vim.b.disable_autoformat = false
+        vim.g.disable_autoformat = false
+        vim.notify('Autoformat enabled', vim.log.levels.INFO)
+      else
+        vim.g.disable_autoformat = true
+        vim.notify('Autoformat disabled', vim.log.levels.INFO)
+      end
+    end, { desc = 'Toggle autoformat on save' })
   end,
 }

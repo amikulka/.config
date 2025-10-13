@@ -9,9 +9,6 @@ return {
       -- Document existing key chains
       { '<leader>c', group = '[C]ode' },
       { '<leader>c_', hidden = true },
-      { '<leader>cc', desc = '[C]ode [C]ompanion Chat' },
-      { '<leader>ci', desc = '[C]ode [C]ompanion Inline' },
-      { '<leader>ca', desc = '[C]ode [C]ompanion Actions' },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>d_', hidden = true },
       { '<leader>p', group = '[P]roject' },

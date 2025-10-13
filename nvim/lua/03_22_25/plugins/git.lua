@@ -34,7 +34,7 @@ return {
     config = function()
       require('gitblame').setup {
         enabled = true,
-        message_template = ' <summary> • <date> • <author>',
+        message_template = '<author> • <date> • <summary>',
         date_format = '%c',
         highlight_group = 'GitBlameVirtText',
       }

@@ -48,13 +48,6 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 
 vim.api.nvim_set_keymap(
   'n',
-  '<leader>taf',
-  '<cmd>lua vim.g.autoformat_enabled = not vim.g.autoformat_enabled; print("Autoformat is now " .. (vim.g.autoformat_enabled and "enabled" or "disabled"))<CR>',
-  { noremap = true, silent = true, desc = '[T]oggle Auto[F]ormat' }
-)
-
-vim.api.nvim_set_keymap(
-  'n',
   '<leader>tai',
   '<cmd>lua vim.g.isort_enabled = not vim.g.isort_enabled; print("Isort is now " .. (vim.g.isort_enabled and "enabled" or "disabled"))<CR>',
   { noremap = true, silent = true, desc = '[T]oggle [A]uto [I]sort' }
