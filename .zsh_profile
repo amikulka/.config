@@ -37,12 +37,17 @@ alias vi=$VIM
 alias vim=$VIM
 
 alias work='cd ~/code/january'
+alias src='cd ~/code/january/src'
+alias gopy='cd ~/code/january/src/apps/debtsy'
 alias web='cd ~/code/january/frontend'
 alias ap='cd ~/code/january/frontend/AgentPortal'
-alias gopy='cd ~/code/january/debtsy'
+alias activate='source /Users/aaronmikulka/code/january/src/.venv/bin/activate'
+
+
 alias conf='cd ~/.config'
 alias godbt='cd ~/code/dbt'
 alias logs='cd ~/.local/share/'
+
 
 alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'

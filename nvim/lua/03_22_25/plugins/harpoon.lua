@@ -8,9 +8,9 @@ return {
     -- harpoon.config.settings.save_on_toggle = true
     -- harpoon.config.settings.sync_on_ui_close = true
 
-    vim.keymap.set('n', '<leader>a', function()
+    vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
-    end, { desc = 'Add currnet file to harpoon' })
+    end, { desc = '[H]arpoon [A]dd current file' })
     vim.keymap.set('n', '<C-e>', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)

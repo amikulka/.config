@@ -1,8 +1,8 @@
 -- ╭─────────────────────────────────────────────────────────╮
 -- │ AUTOCOMMANDS: Automatic behaviors and event handlers   │
--- │ FEATURES: Yank highlighting, auto-format, auto-lint    │
+-- │ FEATURES: Yank highlighting, auto-lint                 │
 -- │ PERFORMANCE: Optimized timing and conflict avoidance   │
--- │ TOGGLES: Respects user preferences and manual overrides│
+-- │ NOTE: Auto-format is handled by conform.nvim plugin    │
 -- ╰─────────────────────────────────────────────────────────╯
 
 -- Highlight when yanking (copying) text
@@ -13,16 +13,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
-  end,
-})
-
--- Auto-format on save (respects toggle)
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = function(args)
-    if vim.g.autoformat_enabled then
-      require('conform').format { bufnr = args.buf, timeout_ms = 2000, lsp_format = 'fallback' }
-    end
   end,
 })
 

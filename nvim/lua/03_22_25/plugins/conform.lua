@@ -21,7 +21,6 @@ return {
         javascriptreact = { 'prettier' },
         json = { 'prettier' },
         graphql = { 'prettier' },
-        yaml = { 'prettier' },
         markdown = { 'prettier' },
       },
       format_on_save = function(bufnr)

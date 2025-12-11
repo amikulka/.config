@@ -32,16 +32,96 @@ return {
     config = function()
       local coq = require 'coq'
       require('mason').setup()
+
+      -- Set up LSP keybindings when LSP attaches to a buffer
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+        callback = function(event)
+          -- Helper function for easier keymap definitions
+          local map = function(keys, func, desc)
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+          end
+
+          -- Jump to definition of word under cursor
+          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+
+          -- Find references for word under cursor
+          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+
+          -- Jump to implementation
+          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+
+          -- Jump to type definition
+          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+
+          -- Fuzzy find symbols in current document
+          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+
+          -- Fuzzy find symbols in workspace
+          map('<leader>sws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch [W]orkspace [S]ymbols')
+
+          -- Rename variable under cursor
+          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame variable')
+
+          -- Execute code action
+          map('<leader>ce', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+          -- Show hover documentation
+          map('K', vim.lsp.buf.hover, 'Hover Documentation')
+
+          -- Go to declaration (different from definition)
+          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+          -- Highlight references of word under cursor on hold
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if client and client.server_capabilities.documentHighlightProvider then
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+              buffer = event.buf,
+              callback = vim.lsp.buf.document_highlight,
+            })
+
+            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+              buffer = event.buf,
+              callback = vim.lsp.buf.clear_references,
+            })
+          end
+        end,
+      })
+
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, coq.lsp_ensure_capabilities())
-      local servers = {}
+      local servers = {
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                -- Point to UV workspace virtual environment
+                venvPath = '/Users/aaronmikulka/code/january/src',
+                venv = '.venv',
+                -- Point to src directories within each workspace member (src-layout pattern)
+                -- Analysis settings
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                autoImportCompletions = true,
+                diagnosticMode = 'workspace',
+                typeCheckingMode = 'basic',
+              },
+            },
+          },
+          root_dir = function(fname)
+            local util = require 'lspconfig.util'
+            return util.root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git')(fname) or util.path.dirname(fname)
+          end,
+        },
+      }
 
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        -- LSP servers
+        'pyright', -- Python language server
+        'typescript-language-server', -- TypeScript/JavaScript language server
         -- Formatters
         'stylua', -- Lua formatter
         'prettier', -- JS/TS/JSON/YAML/Markdown formatter
-        'ruff', -- Python formatter and linter
         'isort', -- Python import sorter
         -- Linters
         'markdownlint', -- Markdown linter
@@ -56,7 +136,7 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            require('lspconfig')[server_name].setup(coq.lsp_ensure_capabilities(server))
           end,
         },
       }

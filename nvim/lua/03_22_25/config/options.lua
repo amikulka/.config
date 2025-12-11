@@ -2,7 +2,7 @@
 -- │ NEOVIM OPTIONS: Core settings and behavior             │
 -- │ LEADER KEYS: Space (leader), Backslash (local leader)  │
 -- │ FEATURES: Relative numbers, smart search, undo files   │
--- │ TOGGLES: autoformat_enabled, isort_enabled             │
+-- │ TOGGLES: isort_enabled (autoformat via conform.nvim)   │
 -- │ PERFORMANCE: Optimized timeouts and update frequencies │
 -- ╰─────────────────────────────────────────────────────────╯
 
@@ -10,7 +10,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 vim.g.have_nerd_font = true -- Set to true if you have a Nerd Font installed
-vim.g.autoformat_enabled = true
 vim.g.isort_enabled = true -- Toggle isort for Python files
 
 -- [[ Setting options ]]

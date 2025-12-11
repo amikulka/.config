@@ -34,7 +34,9 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [workspace-to-monitor-force-assignment]
 w = ['secondary', 1]
 p = 1
-b = 1
+b = ['secondary', 2, 1]
+n = ['secondary', 2, 1]
+m = ['secondary', 2, 1]
 t = 1
 c = ['secondary', 2, 1]
 o = ['secondary', 2, 1]
@@ -79,10 +81,11 @@ alt-w = 'workspace w'
 alt-t = 'workspace t'
 alt-b = 'workspace b'
 alt-c = 'workspace c'
-alt-e = 'workspace p'
+alt-p = 'workspace p'
+alt-n = 'workspace n'
+alt-m = 'workspace n'
 alt-o = 'workspace o'
 alt-3 = 'workspace 3'
-
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
@@ -95,23 +98,16 @@ alt-shift-cmd-ctrl-k = 'move up'
 alt-shift-cmd-ctrl-l = 'move right'
 
 alt-shift-ctrl-cmd-f = 'layout floating tiling' # Toggle between floating and tiling layout
-alt-shift-ctrl-cmd-m = 'fullscreen'             # Toggle between floating and tiling layout
 
 alt-shift-ctrl-cmd-t = 'move-node-to-workspace t'
 alt-shift-ctrl-cmd-c = 'move-node-to-workspace c'
 alt-shift-ctrl-cmd-w = 'move-node-to-workspace w'
 alt-shift-ctrl-cmd-b = 'move-node-to-workspace b'
-alt-shift-ctrl-cmd-e = 'move-node-to-workspace p'
+alt-shift-ctrl-cmd-p = 'move-node-to-workspace p'
 alt-shift-ctrl-cmd-o = 'move-node-to-workspace o'
+alt-shift-ctrl-cmd-n = 'move-node-to-workspace n'
+alt-shift-ctrl-cmd-m = 'move-node-to-workspace m'
 alt-shift-ctrl-cmd-3 = 'move-node-to-workspace 3'
-alt-shift-ctrl-cmd-n = [
-    'move-node-to-workspace --wrap-around next',
-    'workspace --wrap-around next',
-]
-alt-shift-ctrl-cmd-p = [
-    'move-node-to-workspace --wrap-around prev',
-    'workspace --wrap-around prev',
-]
 
 
 alt-shift-ctrl-cmd-a = ['move-node-to-monitor 1', 'focus-monitor 1']
@@ -140,6 +136,7 @@ run = 'move-node-to-workspace w'
 [[on-window-detected]]
 if.app-id = 'com.linear'
 run = 'move-node-to-workspace w'
+
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace t'
@@ -165,73 +162,13 @@ if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace p'
 
 [[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'move-node-to-workspace n'
+
+[[on-window-detected]]
 if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace w'
+run = 'move-node-to-workspace m'
 
-# 1462  | com.apple.finder              | Finder
-# 5595  | com.apple.mail                | Mail
-# 43570 | com.1password.1password       | 1Password
-# 78100 | org.mozilla.firefox           | Firefox
-# 82604 | com.tinyspeck.slackmacgap     | Slack
-# 82622 | com.linear                    | Linear
-# 11038 | com.apple.Notes               | Notes
-# 37537 | com.apple.Preview             | Preview
-# 38955 | at.eggerapps.Postico          | Postico
-# 8737  | com.dynamodb.workbench        | NoSQL Workbench
-# 33040 | com.electron.asana            | Asana
-# 37234 | com.electron.dockerdesktop    | Docker Desktop
-# 11154 | com.apple.QuickTimePlayerX    | QuickTime Player
-# 84700 | com.postmanlabs.mac           | Postman
-# 74553 | com.github.wez.wezterm        | WezTerm
-# 98044 | com.todesktop.230313mzl4w4u92 | Cursor
-# 35664 | us.zoom.xos                   | zoom.us
-
-# [[on-window-detected]]
-# if.app-id = 'com.apple.finder'
-# run = 'layout floating'
-#
-# [[on-window-detected]]
-# if.app-id = 'com.1password.1password'
-# run = 'layout floating'
-#
-# [[on-window-detected]]
-# if.app-id = 'at.eggerapps.Postico'
-# run = 'layout floating'
-#
-# [[on-window-detected]]
-# if.app-id = 'com.openai.chat'
-# run = 'layout floating'
-#
-# [[on-window-detected]]
-# if.app-id = 'us.zoom.xos'
-# run = ['layout floating']
-#
-#
-# [[on-window-detected]]
-# if.app-id = 'org.alacritty'
-# run = 'move-node-to-workspace t'
-#
-#
-#
-# [[on-window-detected]]
-# if.app-id = 'com.tinyspeck.slackmacgap'
-# run = 'move-node-to-workspace w'
-#
-#
-# [[on-window-detected]]
-# if.app-id = 'org.mozilla.firefox'
-# run = 'move-node-to-workspace b'
-#
-# [[on-window-detected]]
-# if.app-id = 'com.google.Chrome'
-# run = 'move-node-to-workspace p'
-#
-# [[on-window-detected]]
-# if.app-id = 'io.zsa.keymapp'
-# run = 'layout floating'
-#
-# [[on-window-detected]]
-# # docker
-# if.app-id = 'com.electron.dockerdesktop'
-# run = 'layout floating'
-#
+[[on-window-detected]]
+if.app-id = 'notion.mail.id'
+run = 'move-node-to-workspace m'
