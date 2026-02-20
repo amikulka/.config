@@ -1,8 +1,0 @@
-layout {
-    floating_panes {
-        pane {
-            plugin location="file:/Users/aaronmikulka/code/zsesh/target/wasm32-wasip1/release/zsesh.wasm"
-        }
-    }
-}
-
