@@ -26,20 +26,20 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 15
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'accordion'
+default-root-container-layout = 'tiles'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
 [workspace-to-monitor-force-assignment]
-w = ['secondary', 1]
-p = 1
-b = ['secondary', 2, 1]
-n = ['secondary', 2, 1]
-m = ['secondary', 2, 1]
-t = 1
-c = ['secondary', 2, 1]
-o = ['secondary', 2, 1]
+w = 'main'
+p = 'main'
+b = 'main'
+n = 'main'
+m = 'main'
+t = 'main'
+c = 'main'
+o = 'main'
 3 = 3
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -97,7 +97,7 @@ alt-shift-cmd-ctrl-j = 'move down'
 alt-shift-cmd-ctrl-k = 'move up'
 alt-shift-cmd-ctrl-l = 'move right'
 
-alt-shift-ctrl-cmd-f = 'layout floating tiling' # Toggle between floating and tiling layout
+alt-f = 'layout floating tiling'
 
 alt-shift-ctrl-cmd-t = 'move-node-to-workspace t'
 alt-shift-ctrl-cmd-c = 'move-node-to-workspace c'
@@ -143,7 +143,7 @@ run = 'move-node-to-workspace t'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace t'
+run = ['move-node-to-workspace t', 'layout accordion']
 
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'

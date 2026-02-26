@@ -1,4 +1,6 @@
 **/.vectorcode/
 **/.claude/
 **/chroma-data/
-
+.pre-commit-config-local.yaml
+.pre-commit-hooks/mypy-wrapper-local.sh
+**/.thoughts/
