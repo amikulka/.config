@@ -40,18 +40,6 @@ return {
         enable = true, 
         disable = { 'ruby' } -- Removed typescript - modern treesitter handles it well
       },
-      text_objects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
-          },
-        },
-      },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
@@ -66,8 +54,5 @@ return {
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
   },
 }

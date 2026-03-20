@@ -4,3 +4,6 @@
 .pre-commit-config-local.yaml
 .pre-commit-hooks/mypy-wrapper-local.sh
 **/.thoughts/
+.worktrees/
+**/docs/plans
+**/docs/superpowers

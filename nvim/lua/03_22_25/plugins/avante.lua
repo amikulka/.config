@@ -1,8 +1,8 @@
 return {
   {
     'yetone/avante.nvim',
+    enabled = true,
     event = 'VeryLazy',
-    lazy = false,
     version = false,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
@@ -10,7 +10,13 @@ return {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
       'nvim-tree/nvim-web-devicons',
-      'MeanderingProgrammer/render-markdown.nvim',
+      {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { 'markdown', 'Avante' },
+        },
+        ft = { 'markdown', 'Avante' },
+      },
       {
         'HakonHarnes/img-clip.nvim',
         event = 'VeryLazy',
@@ -26,33 +32,44 @@ return {
       },
     },
     opts = {
-      provider = 'claude',
-      providers = {
-        claude = {
-          endpoint = 'https://api.anthropic.com',
-          model = 'claude-sonnet-4-6',
-          auth_type = 'max',
-          timeout = 30000,
-          extra_request_body = {
-            temperature = 0,
-            max_tokens = 8000,
+      provider = 'claude-code',
+      mode = 'agentic',
+      acp_providers = {
+        ['claude-code'] = {
+          command = 'npx',
+          args = { '@zed-industries/claude-code-acp' },
+          model = 'claude-opus-4-20250514',
+          env = {
+            NODE_NO_WARNINGS = '1',
           },
         },
       },
-      input = {
-        provider = 'dressing',
-      },
-      behaviour = {
-        auto_suggestions = true,
-        auto_suggestions_provider = 'claude',
-        auto_set_highlight_group = true,
-        auto_set_keymaps = true,
-        auto_apply_diff_after_generation = false,
-        support_paste_from_clipboard = false,
+      providers = {
+        claude = {
+          endpoint = 'https://api.anthropic.com',
+          model = 'claude-sonnet-4-20250514',
+          api_key_name = 'AVANTE_ANTHROPIC_API_KEY',
+          timeout = 30000,
+          extra_request_body = {
+            temperature = 0.75,
+            max_tokens = 4096,
+          },
+        },
       },
       suggestion = {
         debounce = 1500,
         throttle = 1500,
+      },
+      behaviour = {
+        auto_suggestions = true,
+        auto_suggestions_provider = 'claude',
+        auto_set_keymaps = true,
+        auto_apply_diff_after_generation = false,
+        minimize_diff = true,
+        auto_add_current_file = true,
+        enable_token_counting = true,
+        auto_approve_tool_permissions = true,
+        acp_follow_agent_locations = true,
       },
       mappings = {
         diff = {
@@ -64,12 +81,6 @@ return {
           next = ']x',
           prev = '[x',
         },
-        suggestion = {
-          accept = '<C-CR>',
-          next = '<C-j>',
-          prev = '<C-k>',
-          dismiss = '<C-]>',
-        },
         jump = {
           next = ']]',
           prev = '[[',
@@ -78,7 +89,21 @@ return {
           normal = '<CR>',
           insert = '<C-s>',
         },
+        suggestion = {
+          accept = '<M-l>',
+          next = '<M-]>',
+          prev = '<M-[>',
+          dismiss = '<C-]>',
+        },
+        cancel = {
+          normal = { '<C-c>', '<Esc>', 'q' },
+          insert = { '<C-c>' },
+        },
         sidebar = {
+          apply_all = 'A',
+          apply_cursor = 'a',
+          retry_user_request = 'r',
+          edit_user_request = 'e',
           switch_windows = '<Tab>',
           reverse_switch_windows = '<S-Tab>',
         },

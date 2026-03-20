@@ -30,6 +30,11 @@ default-root-container-layout = 'tiles'
 
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Float all windows by default
+[[on-window-detected]]
+check-further-callbacks = true
+run = 'layout floating'
+
 
 [workspace-to-monitor-force-assignment]
 w = 'main'
