@@ -173,7 +173,7 @@ keybinds {
     }
     shared {
         bind "Ctrl f" {
-            LaunchOrFocusPlugin "zsesh" {
+            LaunchOrFocusPlugin "session-manager" {
                 floating true
                 move_to_focused_tab true
             }
@@ -232,7 +232,6 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    zsesh location="file:/Users/aaronmikulka/code/zsesh/target/wasm32-wasip1/release/zsesh.wasm"
     filepicker location="zellij:strider" {
         cwd "/"
     }
