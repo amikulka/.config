@@ -67,11 +67,11 @@ return {
       { '<leader>rn', desc = '[R]e[n]ame variable' },
       { '<leader>rw', desc = '[R]eplace [W]ord' },
 
-      -- Search (Telescope)
+      -- Search (fzf-lua)
       { '<leader>sh', desc = '[S]earch [H]elp' },
       { '<leader>sk', desc = '[S]earch [K]eymaps' },
       { '<leader>sf', desc = '[S]earch [F]iles' },
-      { '<leader>st', desc = '[S]earch [T]elescope builtins' },
+      { '<leader>st', desc = '[S]earch fzf-lua builtins' },
       { '<leader>sw', desc = '[S]earch current [W]ord' },
       { '<leader>sg', desc = '[S]earch by [G]rep' },
       { '<leader>sd', desc = '[S]earch [D]iagnostics' },

@@ -33,14 +33,18 @@ return {
     },
     opts = {
       provider = 'claude-code',
+      auto_suggestions_provider = 'claude',
       mode = 'agentic',
       acp_providers = {
         ['claude-code'] = {
           command = 'npx',
-          args = { '@zed-industries/claude-code-acp' },
-          model = 'claude-opus-4-20250514',
+          args = { '-y', '-g', '@zed-industries/claude-code-acp' },
           env = {
             NODE_NO_WARNINGS = '1',
+            ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY'),
+            ANTHROPIC_BASE_URL = os.getenv('ANTHROPIC_BASE_URL'),
+            ACP_PATH_TO_CLAUDE_CODE_EXECUTABLE = vim.fn.exepath('claude'),
+            ACP_PERMISSION_MODE = 'bypassPermissions',
           },
         },
       },
@@ -62,7 +66,6 @@ return {
       },
       behaviour = {
         auto_suggestions = true,
-        auto_suggestions_provider = 'claude',
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
         minimize_diff = true,

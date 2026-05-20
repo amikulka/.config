@@ -42,6 +42,7 @@ vim.opt.inccommand = 'split' -- Preview substitutions live, as you type!
 vim.opt.cursorline = true -- Show which line your cursor is on
 vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.fileencoding = 'utf-8'
+vim.opt.termguicolors = true
 vim.opt.hlsearch = true -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.wrap = false -- No wrap text
 vim.opt.expandtab = true -- Spaces for tabs

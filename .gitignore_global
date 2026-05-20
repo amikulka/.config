@@ -7,3 +7,7 @@
 .worktrees/
 **/docs/plans
 **/docs/superpowers
+**/.superpowers/
+~/code/january/claude/agents
+**/.playwright-mcp/
+src/apps/debtsy/local/
