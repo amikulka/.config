@@ -13,6 +13,10 @@ alt-7 = 'Go to workspace 7'
 alt-8 = 'Go to workspace 8'
 alt-9 = 'Go to workspace 9'
 
+alt-d = 'Go to workspace d (Docker Desktop)'
+alt-z = 'Go to workspace z (Zoom)'
+alt-c = 'Go to workspace c (Claude Desktop)'
+
 alt-shift-n = 'Go to next workspace'
 alt-shift-p = 'Go to previous workspace'
 
