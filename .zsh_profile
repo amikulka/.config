@@ -35,6 +35,7 @@ alias ll='ls -lG'
 
 alias vi=$VIM
 alias vim=$VIM
+alias avante='nvim -c "lua vim.defer_fn(function() require(\"avante.api\").zen_mode() end, 100)"'
 
 alias work='cd ~/code/january'
 alias src='cd ~/code/january/src'
