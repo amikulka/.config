@@ -42,13 +42,10 @@ vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank to system clipboard' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear search highlights with <Esc>
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.jump { count = -1, float = true }
+end, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.jump { count = 1, float = true }
+end, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>tai',
-  '<cmd>lua vim.g.isort_enabled = not vim.g.isort_enabled; print("Isort is now " .. (vim.g.isort_enabled and "enabled" or "disabled"))<CR>',
-  { noremap = true, silent = true, desc = '[T]oggle [A]uto [I]sort' }
-)

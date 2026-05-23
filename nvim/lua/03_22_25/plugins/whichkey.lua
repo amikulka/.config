@@ -32,7 +32,6 @@ return {
 
       -- Toggle / Auto
       { '<leader>taf', desc = '[T]oggle [A]uto [F]ormat' },
-      { '<leader>tai', desc = '[T]oggle [A]uto [I]sort' },
       { '<leader>tg', desc = '[T]oggle [G]it Blame' },
 
       -- Project

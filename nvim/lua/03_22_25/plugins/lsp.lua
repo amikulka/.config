@@ -1,5 +1,9 @@
--- LSP Configuration & Plugins
--- Note: blink.cmp completion engine is configured in plugins/blink.lua
+-- ╭─────────────────────────────────────────────────────────╮
+-- │ LSP: vim.lsp.config (0.11+) + mason-lspconfig v2         │
+-- │ COMPLETION: blink.cmp (configured in plugins/blink.lua)  │
+-- │ SERVERS: pyright, lua_ls, vtsls                          │
+-- ╰─────────────────────────────────────────────────────────╯
+
 return {
   { 'tpope/vim-sleuth' },
   {
@@ -15,8 +19,8 @@ return {
     'neovim/nvim-lspconfig',
     lazy = false,
     dependencies = {
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
+      { 'mason-org/mason.nvim' },
+      { 'mason-org/mason-lspconfig.nvim' },
       { 'j-hui/fidget.nvim', opts = {} },
       { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     },
@@ -40,14 +44,16 @@ return {
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.server_capabilities.documentHighlightProvider then
+          if client and client:supports_method('textDocument/documentHighlight') then
+            local highlight_group = vim.api.nvim_create_augroup('lsp-highlight-' .. event.buf, { clear = true })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
+              group = highlight_group,
               callback = vim.lsp.buf.document_highlight,
             })
-
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
+              group = highlight_group,
               callback = vim.lsp.buf.clear_references,
             })
           end
@@ -57,89 +63,53 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
-      local servers = {
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                venvPath = '/Users/aaronmikulka/code/january/src',
-                venv = '.venv',
-                extraPaths = {
-                  '/Users/aaronmikulka/code/january/src',
-                  '/Users/aaronmikulka/code/january/src/apps/chocolate',
-                  '/Users/aaronmikulka/code/january/src/apps/cmo',
-                  '/Users/aaronmikulka/code/january/src/apps/debtsy',
-                  '/Users/aaronmikulka/code/january/src/apps/temporal',
-                  '/Users/aaronmikulka/code/january/src/libs/cmo-messaging',
-                  '/Users/aaronmikulka/code/january/src/libs/comms-engine-redis',
-                  '/Users/aaronmikulka/code/january/src/libs/debtsy-db',
-                  '/Users/aaronmikulka/code/january/src/libs/ml-outputs-db',
-                  '/Users/aaronmikulka/code/january/src/libs/temporal-client',
-                  '/Users/aaronmikulka/code/january/src/libs/snowflake-connector',
-                  '/Users/aaronmikulka/code/january/src/utils',
-                  '/Users/aaronmikulka/code/january/src/domains',
-                  '/Users/aaronmikulka/code/january/src/models',
-                  '/Users/aaronmikulka/code/january/src/devx',
-                },
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                autoImportCompletions = true,
-                diagnosticMode = 'workspace',
-                typeCheckingMode = 'basic',
-              },
+      vim.lsp.config('*', { capabilities = capabilities })
+
+      vim.lsp.config('basedpyright', {
+        root_markers = { 'pyrightconfig.json', 'pyproject.toml', '.git' },
+      })
+
+      vim.lsp.config('lua_ls', {
+        settings = {
+          Lua = {
+            completion = { callSnippet = 'Replace' },
+          },
+        },
+      })
+
+      vim.lsp.config('vtsls', {
+        settings = {
+          typescript = {
+            inlayHints = {
+              parameterNames = { enabled = 'literals' },
+              variableTypes = { enabled = false },
+              propertyDeclarationTypes = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
             },
           },
-          root_dir = function(fname)
-            local util = require 'lspconfig.util'
-            return util.root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git')(fname) or util.path.dirname(fname)
-          end,
-        },
-        lua_ls = {
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
+          javascript = {
+            inlayHints = {
+              parameterNames = { enabled = 'literals' },
+            },
+          },
+          vtsls = {
+            autoUseWorkspaceTsdk = true,
+            experimental = {
+              completion = { enableServerSideFuzzyMatch = true },
             },
           },
         },
-      }
+      })
 
       require('mason').setup()
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua',
-        'prettier',
-        'ruff',
-        'isort',
-        'markdownlint',
-      })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
       require('mason-lspconfig').setup {
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        ensure_installed = { 'basedpyright', 'lua_ls', 'vtsls' },
+        automatic_enable = true,
+      }
+      require('mason-tool-installer').setup {
+        ensure_installed = { 'stylua', 'prettier', 'ruff', 'markdownlint' },
       }
     end,
-  },
-  {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-    opts = {
-      settings = {
-        complete_function_calls = true,
-        jsx_close_tag = {
-          enable = true,
-          filetypes = { 'typescriptreact', 'javascriptreact' },
-        },
-      },
-    },
   },
 }

@@ -3,8 +3,7 @@
 -- │ KEY BINDINGS:                                           │
 -- │   • <leader>=   - Format current buffer                 │
 -- │   • <leader>taf - Toggle auto-format on save            │
--- │   • <leader>tai - Toggle isort for Python files         │
--- │ DEPENDENCIES: stylua, ruff, prettier, isort (auto)     │
+-- │ DEPENDENCIES: stylua, ruff, prettier (auto)            │
 -- ╰─────────────────────────────────────────────────────────╯
 
 return {

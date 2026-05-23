@@ -11,3 +11,4 @@
 ~/code/january/claude/agents
 **/.playwright-mcp/
 src/apps/debtsy/local/
+pyrightconfig.json
