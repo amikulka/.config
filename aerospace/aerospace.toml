@@ -61,7 +61,7 @@ inner.horizontal = 2
 inner.vertical = 2
 outer.left = 3
 outer.bottom = 3
-outer.top = [{ monitor."retina" = 0 }, 27]
+outer.top = 0
 outer.right = 3
 
 

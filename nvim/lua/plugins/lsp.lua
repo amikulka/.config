@@ -66,7 +66,7 @@ return {
       vim.lsp.config('*', { capabilities = capabilities })
 
       vim.lsp.config('basedpyright', {
-        root_markers = { 'pyrightconfig.json', 'pyproject.toml', '.git' },
+        root_markers = { 'uv.lock', 'pyrightconfig.json', { 'pyproject.toml', '.git' } },
       })
 
       vim.lsp.config('lua_ls', {
