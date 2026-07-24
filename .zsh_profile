@@ -54,6 +54,8 @@ alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias chroma=''
 
+alias brewup='brew update & brew upgrade -y'
+
 eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
