@@ -12,5 +12,6 @@
 src/apps/debtsy/local/
 pyrightconfig.json
 ai_code_review_runs/
+.serena/
 
 **/.claude/settings.local.json
