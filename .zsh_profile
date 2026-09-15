@@ -52,9 +52,8 @@ alias logs='cd ~/.local/share/'
 
 alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'
-alias chroma=''
 
-alias brewup='brew update & brew upgrade -y'
+alias claude='claude --system-prompt="$(serena prompts print-cc-system-prompt-override)"'
 
 eval "$(zoxide init zsh)"
 
