@@ -49,11 +49,33 @@
     {
       "name": "debtsy",
       "description": "January backend debtsy app",
-      "keywords": ["dbt", "backend"],
+      "keywords": ["backend"],
       "workspace": {
         "name": "debtsy",
         "cwd": "~/code/january/src/apps/debtsy",
         "color": "#196F3D",
+        "restart": "ignore"
+      }
+    },
+    {
+      "name": "terraform",
+      "description": "January's terraform repo",
+      "keywords": ["backend"],
+      "workspace": {
+        "name": "terraform",
+        "cwd": "~/code/terraform/",
+        "color": "#4527A0",
+        "restart": "ignore"
+      }
+    },
+    {
+      "name": "dbt",
+      "description": "January's dbt repo",
+      "keywords": ["dbt"],
+      "workspace": {
+        "name": "dbt",
+        "cwd": "~/code/dbt/",
+        "color": "#D84315",
         "restart": "ignore"
       }
     }
